@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  position: absolute;
+  margin: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+
+  background-image: url("img/zombie-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+html {
+  height: 100%;
+}
+
+.card-zone {
+  width: 126px;
+  height: 176px;
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+}
+
+.card-zone-label {
+  text-align: center;
+}
+
+.exile {
+  border: 1px solid white;
+}
+
+.graveyard {
+  border: 1px solid white;
+}
+
+.deck .card-zone-label {
+    opacity: 0;
+}
+
+.card-down {
+  background-image: url("img/card-back.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
