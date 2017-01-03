@@ -20,12 +20,15 @@ html {
   height: 100%;
 }
 
+.playarea {
+  padding: 50px;
+}
+
 .card-zone {
-  width: 126px;
-  height: 176px;
   display: inline-block;
   color: white;
   border-radius: 5px;
+  margin: 5px;
 }
 
 .card-zone-label {
@@ -41,11 +44,34 @@ html {
 }
 
 .deck .card-zone-label {
-    opacity: 0;
+  opacity: 0;
 }
 
 .card-down {
   background-image: url("img/card-back.png");
+}
+
+.card-down, .card-up, .card-zone {
+  width: 126px;
+  height: 176px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.tapped {
+  transform: rotate(-90deg);
+}
+
+.card-up, .card-down {
+  display: inline-block;
+}
+
+/* Creatures */
+
+.creature-zombie-token {
+  background-image: url("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card");
+}
+
+.creature-zombie-giant-token {
+  background-image: url("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=417496&type=card");
 }
