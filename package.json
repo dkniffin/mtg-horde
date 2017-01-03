@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.14.0",
+    "mtgsdk": "file:../mtg-sdk-javascript/"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.7"
+  }
 }
