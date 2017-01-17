@@ -1,19 +1,24 @@
 {
-  "name": "y",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "mtg-horde",
+  "version": "0.1.0",
+  "private": true,
   "devDependencies": {
-    "webpack": "^1.14.0",
-    "mtgsdk": "file:../mtg-sdk-javascript/"
+    "react-scripts": "0.8.5",
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
-    "bluebird": "^3.4.7"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.1",
+    "redux": "^3.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   }
 }

@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  position: absolute;
+  margin: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+
+  background-image: url("zombie-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+html {
+  height: 100%;
+}
