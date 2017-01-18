@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.5",
     "@kadira/storybook": "^2.21.0",
-    "mtgsdk": "file:../mtg-sdk-javascript/"
+    "json-loader": "^0.5.4",
+    "mtgsdk": "file:../mtg-sdk-javascript/",
+    "react-scripts": "0.8.5"
   },
   "dependencies": {
     "react": "^15.4.2",
