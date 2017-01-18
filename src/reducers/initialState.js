@@ -1,4 +1,4 @@
-import deck from '../../decks/zombie-1.json'
+import deck from '../../decks/zombie.json'
 
 export default {
   deck: deck, // Contains all cards currently in the deck
