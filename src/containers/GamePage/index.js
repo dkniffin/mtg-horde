@@ -4,14 +4,18 @@ import './style.css';
 
 import Deck from "../../components/Deck";
 
+import { discardCards } from "../../actions/deckActions";
+
 class GamePage extends Component {
   render() {
     return (
       <div className="GamePage">
-        <Deck cards={this.props.deck} />
+        <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
       </div>
     );
   }
 }
 
-export default connect((store) => { return store })(GamePage);
+export default connect(
+  (state) => { return { deck: state.deck } },
+  { discardCards })(GamePage);

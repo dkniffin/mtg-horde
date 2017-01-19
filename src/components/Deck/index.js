@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
 
-import { discardCards } from "../../actions/deckActions";
-
 class Deck extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +16,8 @@ class Deck extends Component {
 
   handleDiscard(event) {
     console.log('Discarding ' + this.state.value + ' cards');
-    discardCards(this.state.value);
     event.preventDefault();
+    this.props.onDiscard(this.state.value);
   }
 
   render() {

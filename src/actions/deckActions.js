@@ -1,6 +1,4 @@
-export function discardCards(number) {
-  return {
+export const discardCards = (number) => ({
     type: "DISCARD_CARDS",
     number
-  }
-}
+})
