@@ -10,7 +10,7 @@ body {
   right: 0px;
   left: 0px;
 
-  background-image: url("zombie-background.jpg");
+  /*background-image: url("zombie-background.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

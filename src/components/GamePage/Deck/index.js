@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.css';
-import { connect } from "react-redux";
 
 import { discardCards } from "../../../actions/deckActions";
 
