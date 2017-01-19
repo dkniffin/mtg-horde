@@ -1,6 +1,7 @@
+import Immutable from 'immutable'
 import deck from '../../decks/zombie.json'
 
-export default {
+export default Immutable.fromJS({
   deck: deck, // Contains all cards currently in the deck
   graveyard: [],
   exile: [],
@@ -12,4 +13,4 @@ export default {
     }
     */
   ]
-};
+})

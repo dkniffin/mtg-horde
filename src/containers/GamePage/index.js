@@ -17,5 +17,5 @@ class GamePage extends Component {
 }
 
 export default connect(
-  (state) => { return { deck: state.deck } },
+  (state) => { return { deck: state.get("deck") } },
   { discardCards })(GamePage);
