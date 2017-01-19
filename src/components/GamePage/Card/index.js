@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './style.css';
 import { connect } from "react-redux";
 
-import { fetchUser } from "../../../actions/deckActions";
-
 class Card extends Component {
   render() {
     var classes = ["card"];

@@ -1,0 +1,23 @@
+.deck {
+  width: 126px;
+  height: 176px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  background-image: url("/card-back.png");
+}
+
+.deck .deckCount {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 26px;
+  padding: 4px;
+  margin-left: -15px; /* -(width + padding) / 2 */
+
+  text-align: center;
+  border-radius: 5px;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}

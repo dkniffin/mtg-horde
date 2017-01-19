@@ -1,5 +1,6 @@
-export function discardCard() {
+export function discardCards(number) {
   return {
-    type: "DISCARD_CARD"
+    type: "DISCARD_CARDS",
+    number
   }
 }
