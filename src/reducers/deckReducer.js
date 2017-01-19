@@ -6,7 +6,7 @@ export default function reducer(state={}, action) {
       return {...state, deck}
     }
     default: {
-      return {...state}
+      return state
     }
   }
 }
