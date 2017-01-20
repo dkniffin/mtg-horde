@@ -22,8 +22,8 @@ class Deck extends Component {
 
   render() {
     return (
-      <div className="deck">
-        <span className="deckCount">{this.props.cards.size}</span>
+      <div className="Deck">
+        <span className="DeckCount">{this.props.cards.size}</span>
         <form id="discardForm" onSubmit={this.handleDiscard}>
           <input type="number"
             value={this.state.value}

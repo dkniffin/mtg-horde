@@ -1,10 +1,10 @@
-const deck = (state = [], action) => {
+const deckReducer = (deck = [], action) => {
   switch (action.type) {
     case "DISCARD_CARDS":
-      return state.splice(0, action.number)
+      return deck.splice(0, action.number)
     default:
-      return state
+      return deck
   }
 }
 
-export default deck;
+export default deckReducer;

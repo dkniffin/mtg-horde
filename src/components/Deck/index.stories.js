@@ -3,9 +3,7 @@ import { storiesOf, action } from '@kadira/storybook';
 import Deck from './index.js';
 import Immutable from 'immutable';
 
-const deck = [{name: 'Zombie'}]
-
 storiesOf('Deck', module)
   .add('with one card', () => (
-    <Deck cards={Immutable.fromJS([{name: 'Zombie'}])}></Deck>
+    <Deck cards={Immutable.fromJS([{name: 'Zombie'}])} />
   ));

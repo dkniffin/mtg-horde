@@ -1,0 +1,8 @@
+.GamePage {
+  padding: 30px;
+}
+
+.GamePage .Graveyard,
+.GamePage .Deck {
+  margin: 10px;
+}
