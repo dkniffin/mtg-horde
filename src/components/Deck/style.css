@@ -1,40 +1,7 @@
 .Deck {
-  width: 126px;
-  height: 176px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: relative;
-  background-image: url("/card-back.png");
   display: inline-block;
-  border: 1px solid black;
 }
 
-.Deck .DeckCount {
-  position: absolute;
-  bottom: 38px;
-  left: 50%;
-  width: 26px;
-  padding: 4px;
-  margin-left: -15px; /* -(width + padding) / 2 */
-  font-size: .8em;
-
-  text-align: center;
-  border-radius: 5px;
-
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.Deck #discardForm {
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  width: 96;
-  padding: 4px;
-  margin-left: -50px;
-}
-
-.Deck .discardInput {
-  margin-right: 5px;
-  width: 25px;
+.Deck .CardPile {
+  background-image: url("/card-back.png");
 }

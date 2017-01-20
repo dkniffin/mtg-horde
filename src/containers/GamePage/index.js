@@ -12,7 +12,7 @@ class GamePage extends Component {
   render() {
     return (
       <div className="GamePage">
-        <Graveyard cards={this.props.graveyard} onDiscard={this.props.discardCards}/>
+        <Graveyard cards={this.props.graveyard} onDiscard={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
       </div>
     );
@@ -26,4 +26,4 @@ export default connect(
       graveyard: state.get("graveyard")
     }
   },
-  { discardCards })(GamePage);
+  { discardCards, exileCards })(GamePage);

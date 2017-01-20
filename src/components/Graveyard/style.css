@@ -1,40 +1,8 @@
 .Graveyard {
-  width: 126px;
-  height: 176px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: relative;
-  border: 1px dashed white;
-  border-radius: 10px;
   display: inline-block;
 }
 
-.Graveyard .GraveyardCount {
-  position: absolute;
-  bottom: 38px;
-  left: 50%;
-  width: 26px;
-  padding: 4px;
-  margin-left: -15px; /* -(width + padding) / 2 */
-  font-size: .8em;
-
-  text-align: center;
-  border-radius: 5px;
-
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.Graveyard #exileForm {
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  width: 96;
-  padding: 4px;
-  margin-left: -50px;
-}
-
-.Graveyard .exileInput {
-  margin-right: 5px;
-  width: 25px;
+.Graveyard .CardPile {
+  border: 1px dashed white;
+  background-image: none;
 }
