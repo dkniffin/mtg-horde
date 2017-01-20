@@ -9,6 +9,9 @@ class Card extends Component {
 
     return (
       <div className={classes.join(" ")}>
+        <button className="TapCard" onClick={this.props.onTap}>
+          <img src="tap-icon.png" />
+        </button>
         <div className="CardBounds">
           <img src={imgSrc} alt="card" />
         </div>

@@ -1,4 +1,5 @@
 .Card {
+  position: relative;
   display: inline-block;
 }
 
@@ -15,12 +16,30 @@
   clip-path: inset(0px 0px 0px 0px round 10px 10px);
 }
 
+
+button.TapCard {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 1;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 0px;
+}
+button.TapCard img {
+  width: 10px;
+  height: 10px;
+}
+
 .tapped {
   width: 176px;
   height: 126px;
+  transform-origin: 100% 0%;
+  transform: translate(-100%, -25px) rotate(-90deg);
 }
 
-.tapped img {
-  transform-origin: 100% 0%;
-  transform: translate(-100%, 25px) rotate(-90deg);
+.tapped button.TapCard {
+  bottom: -45px;
 }

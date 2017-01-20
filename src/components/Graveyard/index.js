@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './style.css';
 
 import CardPile from "../CardPile"
-import Card from "../Card"
 
 class Graveyard extends Component {
   render() {

@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
-import './style.css';
+import React, { Component } from 'react'
+import { connect } from "react-redux"
+import './style.css'
 
-import Deck from "../../components/Deck";
-import Graveyard from "../../components/Graveyard";
-import CreatureZone from "../../components/CreatureZone";
+import Deck from "../../components/Deck"
+import Graveyard from "../../components/Graveyard"
+import CreatureZone from "../../components/CreatureZone"
 
-import { discardCards } from "../../actions/deckActions";
-import { exileCards } from "../../actions/graveyardActions";
+import { discardCards } from "../../actions/deckActions"
+import { exileCards } from "../../actions/graveyardActions"
+import { toggleTapped } from "../../actions/cardActions"
 
 class GamePage extends Component {
   render() {
@@ -15,9 +16,9 @@ class GamePage extends Component {
       <div className="GamePage">
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
-        <CreatureZone cards={this.props.creatures} />
+        <CreatureZone cards={this.props.creatures} onTap={this.props.toggleTapped} />
       </div>
-    );
+    )
   }
 }
 
@@ -29,4 +30,4 @@ export default connect(
       creatures: state.get("creatures")
     }
   },
-  { discardCards, exileCards })(GamePage);
+  { discardCards, exileCards, toggleTapped })(GamePage)

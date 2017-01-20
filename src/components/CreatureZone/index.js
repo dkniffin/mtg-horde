@@ -9,8 +9,10 @@ class CreatureZone extends Component {
       <div className="CreatureZone" >
         {
           this.props.cards.map((card, i) => {
-            return <Card key={"card-" + i} imageUrl={card.getIn(['cardData', 'imageUrl'])}
-                         tapped={card.get('tapped')} />
+            return <Card key={"card-" + i}
+                         imageUrl={card.getIn(['cardData', 'imageUrl'])}
+                         tapped={card.get('tapped')}
+                         onTap={() => this.props.onTap(i)} />
           })
         }
       </div>
