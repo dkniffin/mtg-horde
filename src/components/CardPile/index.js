@@ -22,7 +22,6 @@ class CardPile extends Component {
   render() {
     return (
       <div className="CardPile">
-        <span className="CardPileCount">{this.props.cards.size}</span>
         <form id="removeCardForm" onSubmit={this.handleRemoveCard}>
           <input type="number"
             value={this.state.value}
@@ -32,6 +31,7 @@ class CardPile extends Component {
           <input type="submit" value={this.props.removeCardText} className="removeCardBtn" />
         </form>
         {this.props.children}
+        <span className="CardPileCount">{this.props.cards.size}</span>
       </div>
     );
   }
