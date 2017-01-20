@@ -8,9 +8,14 @@ class Deck extends Component {
     return (
       <div className="Deck" >
         <CardPile
+          label="Deck"
           cards={this.props.cards}
           onRemoveCard={this.props.onDiscard}
-          removeCardText="Discard" />
+          removeCardText="Discard" >
+          {this.props.cards.size > 0 &&
+            <img className="cardImage" src="/card-back.png" alt="deck" />
+          }
+        </CardPile>
       </div>
     );
   }

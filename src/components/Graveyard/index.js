@@ -9,6 +9,7 @@ class Graveyard extends Component {
     return (
       <div className="Graveyard">
         <CardPile
+          label="Graveyard"
           cards={this.props.cards}
           onRemoveCard={this.props.onExile}
           removeCardText="Exile">

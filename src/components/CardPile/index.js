@@ -22,6 +22,7 @@ class CardPile extends Component {
   render() {
     return (
       <div className="CardPile">
+        <span className="CardPileLabel">{this.props.label}</span>
         <form id="removeCardForm" onSubmit={this.handleRemoveCard}>
           <input type="number"
             value={this.state.value}

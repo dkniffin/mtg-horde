@@ -1,7 +1,3 @@
 .Deck {
   display: inline-block;
 }
-
-.Deck .CardPile {
-  background-image: url("/card-back.png");
-}
