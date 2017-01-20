@@ -1,7 +1,7 @@
 const deckReducer = (deck = [], action) => {
   switch (action.type) {
     case "DISCARD_CARDS":
-      return deck.splice(0, action.number)
+      return deck.slice(0, -action.number);
     default:
       return deck
   }

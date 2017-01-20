@@ -31,6 +31,7 @@ class CardPile extends Component {
             min="1"/>
           <input type="submit" value={this.props.removeCardText} className="removeCardBtn" />
         </form>
+        {this.props.children}
       </div>
     );
   }

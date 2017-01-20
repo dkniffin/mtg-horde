@@ -9,5 +9,5 @@ storiesOf('Graveyard', module)
     <Graveyard cards={Immutable.fromJS([])} />
   ))
   .add('with one card', () => (
-    <Graveyard cards={Immutable.fromJS([{name: 'Zombie'}])} />
+    <Graveyard cards={Immutable.fromJS([{name: 'Zombie', imageUrl: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card'}])} />
   ));

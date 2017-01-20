@@ -12,7 +12,7 @@ class GamePage extends Component {
   render() {
     return (
       <div className="GamePage">
-        <Graveyard cards={this.props.graveyard} onDiscard={this.props.exileCards}/>
+        <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
       </div>
     );
