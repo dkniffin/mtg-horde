@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 import CardPile from "../CardPile"
+import Card from "../Card"
 
 class Graveyard extends Component {
   render() {
@@ -14,7 +15,7 @@ class Graveyard extends Component {
           onRemoveCard={this.props.onExile}
           removeCardText="Exile">
           {topCardImage !== undefined &&
-            <img className="cardImage" src={topCardImage} alt="graveyard" />
+            <Card imageUrl={topCardImage} tapped={false} />
           }
         </CardPile>
       </div>

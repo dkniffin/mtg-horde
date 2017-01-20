@@ -1,0 +1,13 @@
+.CreatureZone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 15px;
+  margin-top: 50px;
+}
+
+.CreatureZone .Card {
+  margin-left: 10px;
+  margin-right: 10px;
+}

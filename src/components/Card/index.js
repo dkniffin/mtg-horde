@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './style.css';
-import { connect } from "react-redux";
 
 class Card extends Component {
   render() {
-    var classes = ["card"];
+    var classes = ["Card"];
     if (this.props.tapped) classes.push("tapped")
     const imgSrc = this.props.faceDown ? "card-back.png" : this.props.imageUrl;
 
     return (
       <div className={classes.join(" ")}>
-        <img src={imgSrc} />
+        <div className="CardBounds">
+          <img src={imgSrc} alt="card" />
+        </div>
       </div>
     );
   }

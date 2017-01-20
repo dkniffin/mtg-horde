@@ -6,6 +6,14 @@ export default Immutable.fromJS({
   graveyard: [],
   exile: [],
   creatures: [
+    {
+      cardData: deck[0],
+      tapped: true
+    },
+    {
+      cardData: deck[1],
+      tapped: false
+    }
     /*
     {
       cardData: {}, // From mtgsdk
