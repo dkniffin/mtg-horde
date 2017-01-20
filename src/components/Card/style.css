@@ -1,6 +1,7 @@
 .Card {
   position: relative;
   display: inline-block;
+  transition: 200ms all ease-in-out;
 }
 
 .CardBounds {
