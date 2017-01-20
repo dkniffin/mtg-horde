@@ -15,7 +15,7 @@ class Graveyard extends Component {
           onRemoveCard={this.props.onExile}
           removeCardText="Exile">
           {topCardImage !== undefined &&
-            <Card imageUrl={topCardImage} tapped={false} />
+            <img className="cardImage" src={topCardImage} alt="graveyard" />
           }
         </CardPile>
       </div>

@@ -6,3 +6,7 @@
   border: 1px dashed white;
   background-image: none;
 }
+
+.Graveyard .cardImage {
+  clip-path: inset(0px 0px 0px 0px round 10px 10px);
+}
