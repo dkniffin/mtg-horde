@@ -1,0 +1,229 @@
+I've been playing around with a horde deck for a while now, and decided that 100 cards just wasn't enough. As soon as the players stablized and started swinging at the horde, it was usually game over. The only hope the horde had was a lucky living death. For no particular reason, I figured 200 would be a good size for the deck.
+
+A new problem arised. Since the players could not reliably mill away all the scary spells, it was pretty much only luck that could pull us through to the end. To combat this problem, I implemented a new rule!
+
+Burn the bodies!
+Basically, when the players attack the horde with creatures, normally, you just mill the horde deck for the amount of damage you dealt. With my rule, it works like this:
+- at the beginning of each combat phase for the players, they choose 'attack the horde' or 'burn the bodies'.
+- if they choose 'attack the horde', it works like normal. You attack them, and they mill.
+- if they choose 'burn the bodies', then you exile 1 card at random from the horde's graveyard for each 1 damage they would take if you attacked normally.
+- you cannot burn the bodies with non-combat damage
+- you cannot burn the bodies with some creatures, and attack the horde with others. All creatures go for 1, and can't switch mid-combat (like with doublestrike or something)
+- if you get another combat phase, you can choose again for that combat phase.
+
+This rule has allowed me to include some really scary cards that would normally cause the players to lose really badly like past in flames.
+
+Overwhelming Numbers
+After much playing and experimenting, I have found that it is too hard to make the horde scale against multiple players without making it too hard for less players. The solution I have come to is a rule to increase the horde's strength over time.
+
+The rule I currently have in place works as follows:
+- At the end of each horde turn, a counter is increased by 1 for each player in the game.
+- When this counter hits 10 or more, reduce it by 10, and give the horde an emblem.
+- The horde starts with 1 emblem.
+- The horde reveals cards until X non-token cards are revealed, where X is the number of these emblems they have.
+
+With this rule, the players are "forced" to attack the horde, and the horde will be able to naturally overcome powerful player board states when it gets stronger.
+
+Some ways we handle things for the horde:
+Minor Specifics:
+- the players always have 60 life to start, and get 3 turns to set up with no draw on the first turn.
+- the horde deck always uses all 200 cards.
+- if the horde loses life, it treats it as damage and mills that many cards.
+- if the horde gains life, nothing happens.
+
+Choosing Creatures:
+When the horde needs to choose creatures/permanents for sacrifice, or attacking planeswalkers, they choose the creatures in this order:
+1) spawned creature tokens
+2) 2/2 zombie tokens from the deck
+3) 5/5 zombie giant tokens from the deck
+4) non-token creatures chosen at random
+5) enchantments/artifacts chosen at random
+6) cards in hand chosen at random (if I add descent into madness or something)
+
+Planeswalkers:
+At the start of each combat phase for the horde, choose an order of the planeswalkers in play at random. For each planeswalker, going in order, the horde deck chooses a zombie (according to the above rules) for each loyalty counter on that planeswalker, and those zombies attack that planeswalker for that turn. If there are not enough zombies to attack all the planeswalkers like this, then the lucky planeswalkers at the end of the random order are not attacked.
+
+Activated abilities:
+There are only a couple activated abilities that the horde will use:
+Regeneration - If a zombie would be destroyed at any point, it regenerates in response.
+Unearth - If there is a creature with unearth in the graveyard, the ability is activated at the same time the horde plays flashback spells and spells from its hand. The order of all this is randomly chosen.
+
+Decisions:
+If the horde has to make a choice, and there is no determined way to handle that choice, it is chosen at random. (cards like browbeat for instance).
+
+Here's the deck:
+I went with a 130:70 split. I might try to increase the token to non-token ratio so that the graveyard fills up with more 2/2 zombies more quickly. This will make burning the bodies take a little more work, and make the deck overall more difficult to beat.
+
+Apparently I miscounted the zombie tokens when I put them in so it's 129:71 split. I'm just going to leave it as is for now. This is the exact list I am currently using.
+Zombie HordeMagic OnlineOCTGN2ApprenticeBuy These Cards
+Non-token Creatures - 31
+1 Boneknitter
+1 Death Baron
+1 Ghoultree
+1 Grave Titan
+2 Graveborn Muse
+1 Infectious Horror
+1 Lightning Reaver
+1 Mikaeus, the Unhallowed
+3 Noxious Ghoul
+6 Rotting Rats
+1 Sedris, the Traitor King
+1 Sutured Ghoul
+2 Toxic Nim
+1 Unbreathing Horde
+3 Undead Warchief
+3 Vengeful Dead
+2 Vulturous Zombie
+
+Sorceries/Instants - 25
+1 Back to Nature
+1 Army of the Damned
+2 Creeping Corrosion
+1 Decree of Pain
+2 Past in Flames
+1 Plaguewind
+1 Ruination
+2 Smallpox
+2 Syphon Flesh
+4 Syphon Mind
+3 Temporal Extortion
+1 Tribute to the Wild
+4 Zombie Apocalypse
+
+Enchantments - 15
+1 Bad Moon
+1 Call to the Grave
+1 Destructive Flow
+4 Endless Ranks of the Dead
+1 Everlasting Torment
+1 Forsaken Wastes
+1 Gibbering Descent
+1 Grave Betrayal
+1 Gravepact
+1 Havoc Festival
+1 No Mercy
+1 Painful Quandary
+
+Tokens - 129
+10 Zombie Giant Token (5/5)
+119 Zombie Token (2/2)
+
+
+
+Change Log:
+Spoiler (click to hide)
+Changes for the horde deck.
+
+12/07/2013
+-1 Grim Flowering
+-1 Living Death
+-1 Creeping Renaissance
+-1 Zombie Token (2/2)
+
++1 Bad Moon
++1 Havoc Festival
++1 Dread Slaver
++1 Zombie Giant Token (5/5)
+
+The cards I removed were to reduce the suicidal nature of milling the horde deck. The horde will still fight back like before, but not to the point where it auto-kills you with a huge, haste army. Bad moon is basically just a filler card for anthem of rakdos, and dread slaver is just filler in general. He will probably come out for something like bloodbond march when I get one.
+
+I switched a 2/2 token for a 5/5 token because I wanted an even 10 of them, and also because I am still using face-down lands as proxies for about 15 2/2 zombie tokens. I left in the slightly awkward 129:71 ratio because I don't want to make the deck too much harder. It's already quite brutal, and I haven't even added the 2 deadly enchantments I'm planning on adding yet.
+
+13/07/2013
+-1 Dread Slaver
+-1 Ruination
+
++1 No Mercy
++1 Destructive Flow
+
+Dread slaver was just filler, and ruination is a sorcery and I am trying to move to more enchantments. No mercy is something I wanted to test already, and destructive flow is a slightly less but also slightly more brutal ruination. Since it can't get recast by past in flames, it will give the players more room to attack the horde, but if it stays in play, it can prevent proper recovery.
+
+Some card explanations:
+Spoiler (click to hide)
+I wanted each game to feel unique, so there's a lot of 1-ofs in the list. However, there's a bunch of cards that have effects that I really like and/or I really want the deck to consistently have:
+Rotting Rats - basically guarentees the players will be losing cards. It helps hose counterspell users as well because it's almost impossible to stop them from using unearth. They also heavily discourage board wipes because it means you will have to discard.
+Noxious Ghoul - I actually want 1 or 2 more of this guy in the list, but I don't have any more copies. He keeps army sizes down, and kills stuff that is normally really tough to kill.
+Vengeful Dead - They make board wipes very tough to use. If the horde deck mass reanimates, you can't just day of judgement them away. It's perfect.
+Undead Warchief - I actually find the mass pump zombie lords to be a little boring. They just kind of end up making you die really fast, or do nothing because of removal. However, I think the effect is at least somewhat necessary for the horde deck. It means you can't just leave like 3 zombies in play and feel safe. The next turn could be this guy and it adds a ton of damage.
+Syphon Mind - Scales very well with the number of players. It makes each player lose a card, and then dumps a bunch of new potentially scary things onto the board.
+Temporal Extortion - very awesome. It forces the players to make a tough choice which is fun for them. Lose HALF our life? Or risk the horde top-deck (+ the extra attack phase)?
+Zombie Apocalypse - couldn't have had a more flavourful mass reanimate card. It's perfect too because it doesn't just instantly kill you. You get a turn to try to deal with it.
+Endless Ranks of the Dead - Not particularly strong, but it's just epic.
+
+Some silver bullet cards were necessary to combat my meta.
+Forsaken wastes, and everlasting torment are both in the deck to combat lifelink. My Vish Kal deck gets really out of hand if he gets in play with enough tokens to eat. He gains us tons of life, swings in for massive damage, and can snipe important zombies while ignoring their regeneration at the same time. My friend has an Uril deck, and one time was gaining use 120 life per turn.
+Creeping corrosion and back to nature are to punish strong board positions later in the game. When I increased the deck size (from 100 to 200), I realised that after the first 100 cards, there is not much of a difference for the next 100. You just finish them off, or the horde gets a lucky living death and the players get 1-shot. These cards push the players further back from their ideal board positions and burn the bodies prevents the 1-shot power of living death.
+
+There are some other cards in there to hit board positions as well:
+Ruination - Blow up many lands. Certain utility lands cause a lot of problems for the horde and it punishes all the greedy mana bases.
+Tribute to the wild - a bit on the lighter side, but it usually gets a mana rock and sometimes kills a jitte. This may need to be changed for something more powerful, but for now, it's in.
+Smallpox - Really hurts the players. The zombie deck just sacrifice a 2/2 token, and mills 1. The players lose many cards and a small chunk of life.
+
+Everything else in the list is just for flavour and fun.
+Past in Flames - reanimate the spells! It often hits a zombie apocalypse or similar, and gets things like creeping corrosion, back to nature, and smallpox to go again. It's also quite scary with temporal extortion.
+Creeping Renaissance - Mass reanimator spell that has flashback. It always defaults to creatures. It's quite scary when it shows up. Makes you think twice about attacking the deck :p
+Boneknitter - All the zombies including himself have regenerate. If you don't have a way to kill boneknitter and prevent regeneration, you won't be killing any zombies.
+Toxic Nim - quite a simple card, but the choice of taking lots of poison or losing creatures to the regenerating monster is quite awesome. You can't really win against it until you can kill it.
+Sedris, the Traitor King - Really badass zombie. He is also basically a mass reanimate spell that just keeps going. If you can't kill him, he will keep reanimating every new creature that gets tossed into the graveyard.
+Vulturous Zombie - flying zombie. He also gets bigger over time. He's quite fun.
+Grim Flowering - If you don't burn the bodies, and this thing shows up, it's one hell of a fight for you (or a lot of the times just hell for you).
+Sutured Ghoul - He can fairly easily 1-shot you and your team. He doesn't even need much food to be scary. If he eats just 5 2/2 zombies, he is a 10/10 trample.
+Painful Quandary - only recently added for experimentation. I like cards that pose players with a choice. It makes it more interesting.
+Decree of Pain - Kills all the creatures and then dumps a new hand onto the board. It's an awesome board wipe because even if it kills a whole lot of zombies, it will replace each one with a new zombie or even more devastating spell.
+Graveborn Muse - If you let the zombies untap, they will crush you with a ton of extra cards. I made it so the horde draws, and then mills. This way, they will always get the cards (as opposed to milling the last 20 cards of the deck and then drawing 0). The self damage actually makes the horde even more dangerous because they will most likely play something out of the graveyard.
+
+Cards I am looking to add/experiment with, but don't have a copy or haven't tried out yet:
+Descent into madness - It could really tear up the players' side of the battlefield. The mass zombies would be able to take the losses easily.
+Lurking Predators - I like cards that give the players a choice. It makes the deck feel more interactive even though it doesn't actually choose anything.
+Rise of the Dark Realms - Not even out yet, but it would definitely be fun. It's coming out in M14, and it's basically the original liliana's ultimate ability. Reanimate everything!
+Destructive Flow - Slowly melt away the players' mana bases. This kind of effect is necessary since my deck aims to make the game longer. (OBTAINED)
+Pox - Melt everyone's everything! ~suggested by Espuma
+No Mercy - Can't attack the horde until you get rid of it. (OBTAINED)
+Reito Lantern - Quite a bit off flavour, but it would basically make the horde immortal. All spells and creatures that die/get used would go back to the bottom of the deck. The only danger of something like this is that, without the graveyard, the horde deck is not nearly as dangerous. It might be too easy to just build up a solid board position while the horde whiffs zombie apocalypses. Still an interesting card though.
+Geralf's Mindcrusher - self mill actually accelerates my horde a lot. There are so many cards that work from the graveyard that this could heavily benefit the horde, and undying is awesome.
+Bloodbond March - An extremely powerful enchantment that can scare the players into attacking the deck - either to get rid of it through mill, or by burning away the zombie tokens. This will be a difinite inclusion as soon as I can get one.
+Anthem of Rakdos - This card is awesome. I'm sure I'll be adding it as soon as I get a copy. It fits perfectly for fixing the problem where there are not enough non-graveyard oriented threats. It basically turns the zombies into 8/2's and makes the horde self-mill for 2 for each attacking creature. This will be something you don't want to see, so milling the horde deck will be required to stop it. It's also a much better option than blood moon in terms of being a 'lord' that is not a creature
+.
+
+Adjusting Difficulty
+I only really get to play with 1 other person most of the time. Having just 2 of us makes it really hard to measure the power of the horde deck. If it becomes too easy though (when we add more players), we typically reduce the turn count that we get at the start. Similarly, if it's too hard, we can add a turn.
+It's also possible to add 'half' turns by allowing a draw on the first turn. So maybe it's a little too hard, so a good way to fix it is to allow a draw on the first player turn.
+Adjusting the starting life total is another option, but I find reducing the life total is not a very good idea. It often leads to the players randomly getting 1-shot when a scary zombie turn comes up.
+
+Manly Mode:
+The zombies take the first turn. Good for some laughs sometimes. Haven't beat it yet.
+
+Current Problems: (New section)
+Spoiler (click to hide)
+This is a new section I have created regarding concerns about how my horde deck plays out, as well as solutions to each problem (either implemented or just theoretical solutions). If you have ideas for any of the problems, let me know! I'd be glad to see what others have to add.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem - Not enough incentive to mill the horde deck.
+Since the horde deck has so many powerful 'graveyard matters' cards, it is virtually suicide to mill it with your attacks. What's been happening is that the players will only burn the bodies, and never mill the horde deck. It's not entirely bad, and it's still not easy, but it leads to rather long, and somewhat stale games.
+
+Solution - Still working on it, but reducing disincentive to attacking, and increasing incentive to attacking will most likely do the trick.
+There are a couple of cards that are unmanageable if they are cast when the horde deck has a decent amount of zombies in the graveyard. Grim flowering, creeping renaissance, and living death are the main ones. I don't mind mass reanimation, but with big hastey armies, it is usually instant death, which is no fun. Furthermore, you can always just attack the graveyard using my custom rule. This causes the players to never want to attack the horde deck. By removing some of these instant kill cards, and putting in more really dangerous cards (that are more powerful without a reliance on the graveyard, and can't be recurred by zombie apocalypse or past in flames), I can 'force' the players to attack the deck to remove these threats. Bloodbond march seems like a good fit for this. It gives the players an entire turn to try to figure something out (no instant death), but it can't be recurred by the horde deck. The only problem is that it scales with the horde's graveyard, but it isn't doubly bad like creeping renaissance which means if you mill the deck, you give it more ammo, and also make it come out sooner.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem - Getting cheesed out by a big zombie token chain.
+It happens every once in a while, and it was even a problem when the deck was only 100 cards. Basically, it's that random turn where you get 3 zombie giants, 7 zombie tokens, and then an undead warchief - usually resulting in a rather quick death.
+
+Solution - Not entirely sure what to do, but maybe less zombie giants.
+Reducing the number of zombie giants would make this a lot less painful. It's already hard enough when 10 2/2 zombies show up, so changing a few zombie giants for more 2/2 zombies would not be that bad. I don't want to reduce the difficulty too much though. I like what the zombie giants add to the horde - a threat without using their non-token card.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem - Very powerful 'problem' permanents that typically get hit by removal right away in a normal game.
+Some cards like Umezawa's Jitte and Assemble the Legion pretty much kick the horde's butt single-handedly. There are some answers to them in the horde deck, but not many.
+
+Solution - Possibly me more artifact/enchantment removal.
+More removal would lower the power of these problem permanents. The next step is to find some more nice cards to fit into the deck to kill these problem permanents. I have a gate to phyrexia lying around and may give it a shot. It will be annoying to choose targets randomly, but it should be okay. I may go with having it target the artifact with the highest CMC, ignoring its own artifacts.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What do you think of the deck?
+
+What about the additional rule?
+
+Do you think my list is too easy?
+I feel like it is when I look at some other lists, but I think that my deck is pretty damn hard to beat with just 2 people.
