@@ -1,3 +1,9 @@
 .GamePage {
   padding: 30px;
 }
+
+.PhaseTracker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
