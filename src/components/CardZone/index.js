@@ -3,10 +3,10 @@ import './style.css';
 
 import Card from "../Card"
 
-class CreatureZone extends Component {
+class CardZone extends Component {
   render() {
     return (
-      <div className="CreatureZone" >
+      <div className="CardZone">
         {
           this.props.cards.map((card, i) => {
             return <Card key={"card-" + i}
@@ -20,4 +20,4 @@ class CreatureZone extends Component {
   }
 }
 
-export default CreatureZone;
+export default CardZone;

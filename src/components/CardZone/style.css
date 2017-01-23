@@ -1,4 +1,4 @@
-.CreatureZone {
+.CardZone {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,7 +7,7 @@
   margin-top: 50px;
 }
 
-.CreatureZone .Card {
+.CardZone .Card {
   margin-left: 10px;
   margin-right: 10px;
 }

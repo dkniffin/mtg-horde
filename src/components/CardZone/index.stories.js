@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 import Immutable from 'immutable'
 
-import CreatureZone from './index.js'
+import CardZone from './index.js'
 
 const cards = Immutable.fromJS([
   {
@@ -23,7 +23,7 @@ const cards = Immutable.fromJS([
   }
 ])
 
-storiesOf('CreatureZone', module)
-  .add('with some creatures', () => (
-    <CreatureZone cards={cards} />
+storiesOf('CardZone', module)
+  .add('with some cards', () => (
+    <CardZone cards={cards} />
   ));

@@ -4,7 +4,7 @@ import './style.css'
 
 import Deck from "../../components/Deck"
 import Graveyard from "../../components/Graveyard"
-import CreatureZone from "../../components/CreatureZone"
+import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
 
 import { discardCards } from "../../actions/deckActions"
@@ -21,7 +21,7 @@ class GamePage extends Component {
         <PhaseTracker currentPhaseText={this.props.phaseText} onNextPhase={this.props.nextPhase}/>
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
-        <CreatureZone cards={this.props.creatures} onTap={this.props.toggleTapped} />
+        <CardZone id="CreatureZone" cards={this.props.creatures} onTap={this.props.toggleTapped} />
       </div>
     )
   }
