@@ -1,0 +1,11 @@
+.PhaseTracker {
+  padding: 10px;
+  font-size: 1.7em;
+
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  width: 250px;
+}

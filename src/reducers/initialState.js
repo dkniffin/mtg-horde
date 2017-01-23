@@ -20,5 +20,6 @@ export default Immutable.fromJS({
       tapped: true
     }
     */
-  ]
+  ],
+  phase: 0
 })
