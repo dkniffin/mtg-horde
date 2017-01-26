@@ -21,6 +21,7 @@ class GamePage extends Component {
         <PhaseTracker currentPhaseText={this.props.phaseText} onNextPhase={this.props.nextPhase}/>
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
+        <CardZone id="PendingZone" cards={this.props.pending} />
         <CardZone id="CreatureZone" cards={this.props.creatures} onTap={this.props.toggleTapped} />
       </div>
     )
@@ -31,8 +32,9 @@ export default connect(
   (state) => {
     return {
       deck: state.get("deck"),
-      graveyard: state.get("graveyard"),
+      pending: state.get("pending"),
       creatures: state.get("creatures"),
+      graveyard: state.get("graveyard"),
       phaseText: phases[state.get("phase")]
     }
   },

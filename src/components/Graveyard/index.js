@@ -5,7 +5,7 @@ import CardPile from "../CardPile"
 
 class Graveyard extends Component {
   render() {
-    const topCardImage = this.props.cards.getIn([-1, 'imageUrl'])
+    const topCardImage = this.props.cards.getIn([-1, 'cardData', 'imageUrl'])
     return (
       <div className="Graveyard">
         <CardPile
