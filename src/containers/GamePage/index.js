@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import './style.css'
 
 import Deck from "../../components/Deck"
+import Hand from "../../components/Hand"
 import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
@@ -21,6 +22,7 @@ class GamePage extends Component {
         <PhaseTracker phase={this.props.phase} onNextPhase={this.props.nextPhase}/>
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
+        <Hand cards={this.props.hand}/>
         <CardZone id="PendingZone" cards={this.props.pending} />
         <CardZone id="CreatureZone" cards={this.props.creatures} onTap={this.props.toggleTapped} />
       </div>
@@ -32,6 +34,7 @@ export default connect(
   (state) => {
     return {
       deck: state.get("deck"),
+      hand: state.get("hand"),
       pending: state.get("pending"),
       creatures: state.get("creatures"),
       graveyard: state.get("graveyard"),

@@ -1,7 +1,5 @@
 import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
 
-console.log(phases)
-
 export const nextPhase = () => {
   return (dispatch, getState) => {
     const nextPhase = phases[nextPhaseIdx(getState().get('phase'))].id

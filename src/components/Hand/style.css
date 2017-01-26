@@ -1,0 +1,9 @@
+.Hand {
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  color: white;
+  font-size: 2em;
+  background-image: url('/hand-mtg.png');
+}

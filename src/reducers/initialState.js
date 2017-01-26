@@ -15,7 +15,8 @@ export default Immutable.fromJS({
   phase: 0,
   deck: deck, // Cards currently in the library
   pending: [], // Cards that haven't hit the field yet
-  creatures: [], // Contains cards in the creature zone
+  creatures: [], // Cards in the creature zone
+  hand: [], // Cards in the Horde's hand
   graveyard: [], // Cards in the graveyard
   exile: [] // Cards in exile
 })

@@ -6,6 +6,7 @@ import exile from "./exileReducer"
 import creatures from "./creaturesReducer"
 import phase from "./phaseReducer"
 import pending from "./pendingReducer"
+import hand from "./handReducer"
 
 export default combineReducers({
   deck,
@@ -13,5 +14,6 @@ export default combineReducers({
   graveyard,
   exile,
   creatures,
+  hand,
   phase
 })

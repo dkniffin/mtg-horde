@@ -8,6 +8,12 @@
   right: 10px;
 }
 
+.Hand {
+  position: absolute;
+  top: 20px;
+  left: 330px;
+}
+
 #PendingZone {
   border: 1px dotted white;
   background: repeating-linear-gradient(
