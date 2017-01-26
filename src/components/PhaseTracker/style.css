@@ -1,6 +1,5 @@
 .PhaseTracker {
   padding: 10px;
-  font-size: 1.7em;
 
   background-color: rgba(0,0,0,0.5);
   color: white;
@@ -8,4 +7,13 @@
   border-radius: 10px;
 
   width: 250px;
+}
+
+.PhaseTracker .CurrentPhaseTitle {
+  font-size: 1.7em;
+}
+
+.CurrentPhaseDescription {
+  font-size: 0.8em;
+  display: block;
 }
