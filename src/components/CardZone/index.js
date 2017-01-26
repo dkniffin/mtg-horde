@@ -6,7 +6,7 @@ import Card from "../Card"
 class CardZone extends Component {
   render() {
     return (
-      <div className="CardZone">
+      <div id={this.props.id} className="CardZone">
         {
           this.props.cards.map((card, i) => {
             return <Card key={"card-" + i}
