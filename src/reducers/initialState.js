@@ -8,7 +8,6 @@ const deckCards = rawdeck.map((cardData) => {
     tapped: false
   }
 })
-console.log(deckCards)
 
 const deck = shuffle(deckCards)
 
