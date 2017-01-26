@@ -1,9 +1,13 @@
+import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
+
+console.log(phases)
+
 export const nextPhase = () => {
   return (dispatch, getState) => {
-    const nextPhase = getState().get('phase') + 1
+    const nextPhase = phases[nextPhaseIdx(getState().get('phase'))].id
 
     switch (nextPhase) {
-      case 1:
+      case 'HORDE_DRAW':
         /*
           Horde Draw - Flip cards from the top of the library, until a non-token is found. All
           revealed cards will be played, but first they must be put in the pending zone, so the
@@ -28,7 +32,7 @@ export const nextPhase = () => {
           cards: flippedCards
         })
         break;
-      case 2:
+      case 'HORDE_PLAY':
         /*
           Horde Play - The Survivors are done reacting. Move pending cards to creature zone.
         */

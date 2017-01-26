@@ -12,7 +12,7 @@ import { exileCards } from "../../actions/graveyardActions"
 import { toggleTapped } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 
-import phases from '../../constants/phases.js'
+import { phases } from '../../helpers/phaseHelper.js'
 
 class GamePage extends Component {
   render() {
@@ -35,7 +35,7 @@ export default connect(
       pending: state.get("pending"),
       creatures: state.get("creatures"),
       graveyard: state.get("graveyard"),
-      phaseText: phases[state.get("phase")]
+      phaseText: phases[state.get("phase")]['title']
     }
   },
   {

@@ -1,8 +1,4 @@
-import phases from '../constants/phases.js'
-
-function nextPhaseIdx(currentPhase) {
-  return (currentPhase + 1) % phases.length
-}
+import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
 
 const phaseReducer = (phase = [], action) => {
   switch (action.type) {
