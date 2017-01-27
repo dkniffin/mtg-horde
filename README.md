@@ -43,3 +43,10 @@ Sources:
 
 - More decks
 - When the horde gains life, put that many random cards from the graveyard on top of the library, and shuffle it.
+
+# Contributing
+
+- `git clone`
+- `npm install`
+- `npm start` will start up the app at http://localhost:3000/game
+- `npm run storybook` will start storybook at http://localhost:9009
