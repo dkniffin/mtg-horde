@@ -8,7 +8,7 @@ export const discardCards = (number) => {
 
     dispatch({
       type: "DISCARD_CARDS",
-      discardedCards
+      cards: discardedCards
     })
   }
 }

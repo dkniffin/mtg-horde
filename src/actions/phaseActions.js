@@ -38,6 +38,14 @@ export const nextPhase = () => {
 
         const numPending = pendingCards.size
 
+        const grouped = pendingCards.groupBy((card) => {
+          const types = card.getIn(['cardData', 'types'])
+          return types.includes('Sorcery') || types.includes('Instant')
+        })
+
+        const nonPermanents = grouped.get(true) || []
+        const permanents = grouped.get(false) || []
+
         dispatch ({
           type: "REMOVE_CARDS_FROM_PENDING",
           number: numPending
@@ -45,7 +53,12 @@ export const nextPhase = () => {
 
         dispatch ({
           type: "ADD_CARDS_TO_CREATURE_ZONE",
-          cards: pendingCards
+          cards: permanents
+        })
+
+        dispatch ({
+          type: "DISCARD_CARDS",
+          cards: nonPermanents
         })
 
     }
