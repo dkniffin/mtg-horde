@@ -7,12 +7,14 @@ import Hand from "../../components/Hand"
 import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
+import CardModal from "../../components/CardModal"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
 import { exileCards } from "../../actions/graveyardActions"
-import { toggleTapped } from "../../actions/cardActions"
+import { toggleTapped, openCardModal } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
+import { closeModal } from "../../actions/modalActions"
 
 import { phases } from '../../helpers/phaseHelper.js'
 
@@ -24,8 +26,17 @@ class GamePage extends Component {
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
-        <CardZone id="PendingZone" cards={this.props.pending} />
-        <CardZone id="PermanentZone" cards={this.props.permanents} onTap={this.props.toggleTapped} />
+        <CardZone id="PendingZone"
+                  cards={this.props.pending}
+                  onTap={this.props.toggleTapped}
+                  onCardClick={this.props.openCardModal} />
+        <CardZone id="PermanentZone"
+                  cards={this.props.permanents}
+                  onTap={this.props.toggleTapped}
+                  onCardClick={this.props.openCardModal} />
+        <CardModal open={this.props.cardModalOpen}
+                   card={this.props.cardModalData}
+                   closeModal={this.props.closeModal} />
       </div>
     )
   }
@@ -39,14 +50,18 @@ export default connect(
       pending: state.get("pending"),
       permanents: state.get("permanents"),
       graveyard: state.get("graveyard"),
-      phase: phases[state.get("phase")]
+      phase: phases[state.get("phase")],
+      cardModalOpen: state.getIn(["cardModal", "open"]),
+      cardModalData: state.getIn(["cardModal", "card"])
     }
   },
   {
     deckDiscard,
     exileCards,
     toggleTapped,
+    openCardModal,
     nextPhase,
     handDiscard,
-    drawCards
+    drawCards,
+    closeModal
   })(GamePage)

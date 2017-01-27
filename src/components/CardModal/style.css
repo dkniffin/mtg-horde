@@ -1,0 +1,22 @@
+.CardModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.CardModal .CardHolder {
+  position: relative;
+  top: -200px;
+  left: -50%;
+}
+
+.CardModal img {
+  height: 400px;
+}
+
+.CloseModalButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+}

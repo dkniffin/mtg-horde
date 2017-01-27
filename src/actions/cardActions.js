@@ -6,3 +6,12 @@ export const toggleTapped = (cardIndex) => {
     })
   }
 }
+
+export const openCardModal = (card) => {
+  return (dispatch, getState) => {
+    dispatch({
+      type: "OPEN_CARD_MODAL",
+      card
+    })
+  }
+}

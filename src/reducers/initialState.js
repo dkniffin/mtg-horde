@@ -13,6 +13,10 @@ const deck = shuffle(deckCards)
 
 export default Immutable.fromJS({
   phase: 0,
+  cardModal: {
+    open: false,
+    card: {}
+  },
   deck: deck, // Cards currently in the library
   pending: [], // Cards that haven't hit the field yet
   permanents: [], // Cards in the permanent zone
