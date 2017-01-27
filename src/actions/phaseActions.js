@@ -32,7 +32,7 @@ export const nextPhase = () => {
         break;
       case 'HORDE_PLAY':
         /*
-          Horde Play - The Survivors are done reacting. Move pending cards to creature zone.
+          Horde Play - The Survivors are done reacting. Move pending cards to permanent zone.
         */
         const pendingCards = getState().get('pending')
 
@@ -52,7 +52,7 @@ export const nextPhase = () => {
         })
 
         dispatch ({
-          type: "ADD_CARDS_TO_CREATURE_ZONE",
+          type: "ADD_CARDS_TO_PERMANENT_ZONE",
           cards: permanents
         })
 

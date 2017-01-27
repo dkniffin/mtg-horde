@@ -24,7 +24,7 @@ class GamePage extends Component {
         <Deck cards={this.props.deck} onDiscard={this.props.discardCards}/>
         <Hand cards={this.props.hand}/>
         <CardZone id="PendingZone" cards={this.props.pending} />
-        <CardZone id="CreatureZone" cards={this.props.creatures} onTap={this.props.toggleTapped} />
+        <CardZone id="PermanentZone" cards={this.props.permanents} onTap={this.props.toggleTapped} />
       </div>
     )
   }
@@ -36,7 +36,7 @@ export default connect(
       deck: state.get("deck"),
       hand: state.get("hand"),
       pending: state.get("pending"),
-      creatures: state.get("creatures"),
+      permanents: state.get("permanents"),
       graveyard: state.get("graveyard"),
       phase: phases[state.get("phase")]
     }
