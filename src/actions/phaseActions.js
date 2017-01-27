@@ -60,7 +60,9 @@ export const nextPhase = () => {
           type: "DISCARD_CARDS",
           cards: nonPermanents
         })
-
+        break;
+      default:
+        break;
     }
     dispatch({
       type: "NEXT_PHASE"

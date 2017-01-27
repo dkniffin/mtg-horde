@@ -1,4 +1,4 @@
-import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
+import { nextPhaseIdx } from '../helpers/phaseHelper.js'
 
 const phaseReducer = (phase = [], action) => {
   switch (action.type) {
