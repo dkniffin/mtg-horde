@@ -28,7 +28,6 @@ class GamePage extends Component {
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
         <CardZone id="PendingZone"
                   cards={this.props.pending}
-                  onTap={this.props.toggleTapped}
                   onCardClick={this.props.openCardModal} />
         <CardZone id="PermanentZone"
                   cards={this.props.permanents}

@@ -9,10 +9,11 @@ class CardZone extends Component {
       <div id={this.props.id} className="CardZone">
         {
           this.props.cards.map((card, i) => {
+            const onTap = this.props.onTap ? () => this.props.onTap(i) : false
             return <Card key={"card-" + i}
                          imageUrl={card.getIn(['cardData', 'imageUrl'])}
                          tapped={card.get('tapped')}
-                         onTap={() => this.props.onTap(i)}
+                         onTap={onTap}
                          onClick={() => this.props.onCardClick(card) }/>
           })
         }
