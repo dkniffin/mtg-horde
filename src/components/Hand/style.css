@@ -1,4 +1,4 @@
-.Hand {
+.HandSize {
   width: 64px;
   height: 64px;
   text-align: center;
@@ -6,4 +6,8 @@
   color: white;
   font-size: 2em;
   background-image: url('/hand-mtg.png');
+}
+
+.HandButton {
+  width: 50%;
 }

@@ -5,7 +5,11 @@ class Hand extends Component {
   render() {
     return (
       <div className="Hand">
-        {this.props.cards.size}
+        <div className="HandSize">
+          {this.props.cards.size}
+        </div>
+        <button className="HandButton" onClick={this.props.onDiscard}>-</button>
+        <button className="HandButton"  onClick={this.props.onDraw}>+</button>
       </div>
     );
   }

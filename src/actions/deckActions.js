@@ -7,7 +7,7 @@ export const discardCards = (number) => {
     })
 
     dispatch({
-      type: "DISCARD_CARDS",
+      type: "ADD_CARDS_TO_GRAVEYARD",
       cards: discardedCards
     })
   }
