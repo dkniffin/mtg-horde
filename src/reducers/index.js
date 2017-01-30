@@ -8,6 +8,7 @@ import phase from "./phaseReducer"
 import pending from "./pendingReducer"
 import hand from "./handReducer"
 import cardModal from "./cardModalReducer"
+import planeswalkers from "./planeswalkerReducer"
 
 export default combineReducers({
   deck,
@@ -17,5 +18,6 @@ export default combineReducers({
   permanents,
   hand,
   phase,
-  cardModal
+  cardModal,
+  planeswalkers
 })

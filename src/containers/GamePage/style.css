@@ -14,6 +14,12 @@
   left: 330px;
 }
 
+.PlaneswalkerCounter {
+  position: absolute;
+  top: 20px;
+  right: 300px;
+}
+
 #PendingZone {
   border: 1px dotted white;
   background: repeating-linear-gradient(

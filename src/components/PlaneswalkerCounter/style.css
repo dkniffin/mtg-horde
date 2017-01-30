@@ -1,0 +1,13 @@
+.NumPlaneswalkers {
+  width: 64px;
+  height: 112px;
+  text-align: center;
+  line-height: 112px;
+  color: white;
+  font-size: 2em;
+  background-image: url('/planeswalker.png');
+}
+
+.PlaneswalkerButton {
+  width: 32px;
+}

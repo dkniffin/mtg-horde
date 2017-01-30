@@ -8,6 +8,7 @@ import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
 import CardModal from "../../components/CardModal"
+import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
 import { exileCards } from "../../actions/graveyardActions"
@@ -15,6 +16,7 @@ import { toggleTapped, openCardModal } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
 import { closeModal } from "../../actions/modalActions"
+import { addPlaneswalker, removePlaneswalker } from "../../actions/planeswalkerActions"
 
 import { phases } from '../../helpers/phaseHelper.js'
 
@@ -26,6 +28,9 @@ class GamePage extends Component {
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
+        <PlaneswalkerCounter count={this.props.planeswalkers}
+                             onAdd={this.props.addPlaneswalker}
+                             onRemove={this.props.removePlaneswalker} />
         <CardZone id="PendingZone"
                   cards={this.props.pending}
                   onCardClick={this.props.openCardModal} />
@@ -44,12 +49,13 @@ class GamePage extends Component {
 export default connect(
   (state) => {
     return {
+      phase: phases[state.get("phase")],
+      planeswalkers: state.get("planeswalkers"),
       deck: state.get("deck"),
       hand: state.get("hand"),
       pending: state.get("pending"),
       permanents: state.get("permanents"),
       graveyard: state.get("graveyard"),
-      phase: phases[state.get("phase")],
       cardModalOpen: state.getIn(["cardModal", "open"]),
       cardModalData: state.getIn(["cardModal", "card"])
     }
@@ -62,5 +68,7 @@ export default connect(
     nextPhase,
     handDiscard,
     drawCards,
-    closeModal
+    closeModal,
+    addPlaneswalker,
+    removePlaneswalker
   })(GamePage)

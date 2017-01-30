@@ -14,6 +14,7 @@ const deck = shuffle(deckCards)
 
 export default Immutable.fromJS({
   phase: 0,
+  planeswalkers: 4,
   cardModal: {
     open: false,
     card: {}
