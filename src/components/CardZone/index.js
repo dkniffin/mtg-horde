@@ -8,7 +8,8 @@ class CardZone extends Component {
     return (
       <div id={this.props.id} className="CardZone">
         {
-          this.props.cards.map((card, i) => {
+          this.props.cards.map((card) => {
+            const i = card.get('index')
             const onTap = this.props.onTap ? () => this.props.onTap(i) : false
             return <Card key={"card-" + i}
                          imageUrl={card.getIn(['cardData', 'imageUrl'])}

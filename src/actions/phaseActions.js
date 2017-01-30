@@ -1,5 +1,5 @@
 import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
-import { resolvePending, castFromGraveyard, castFromHand, hordeDraw } from '../helpers/gameHelper.js'
+import Game from '../helpers/gameHelper.js'
 
 export const nextPhase = () => {
   return (dispatch, getState) => {
@@ -8,11 +8,12 @@ export const nextPhase = () => {
     switch (nextPhase) {
       case 'HORDE_DRAW':
         /*
-          Horde Draw - Flip cards from the top of the library, until a non-token is found. All
-          revealed cards will be played, but first they must be put in the pending zone, so the
-          Survivors have a chance to react.
+          Horde Draw - Untap, then flip cards from the top of the library, until a non-token is
+          found. All revealed cards will be played, but first they must be put in the pending zone,
+          so the Survivors have a chance to react.
         */
-        hordeDraw(dispatch, getState)
+        Game.untap(dispatch, getState)
+        Game.hordeDraw(dispatch, getState)
         break;
 
       case 'HORDE_PLAY':
@@ -20,9 +21,9 @@ export const nextPhase = () => {
           Horde Play - Resolve pending cards, then play cards from hand, and cards from the
           graveyard with flashback or unearth
         */
-        resolvePending(dispatch, getState)
-        castFromGraveyard(dispatch, getState)
-        castFromHand(dispatch, getState)
+        Game.resolvePending(dispatch, getState)
+        Game.castFromGraveyard(dispatch, getState)
+        Game.castFromHand(dispatch, getState)
         break;
 
       case 'HORDE_ATTACK':
@@ -30,7 +31,8 @@ export const nextPhase = () => {
           Horde Attack - Resolve pending cards, then all creatures attack. Tap them, and indicate
           which player or planeswalker they are targeting.
         */
-        resolvePending(dispatch, getState)
+        Game.resolvePending(dispatch, getState)
+        Game.declareAttackers(dispatch, getState)
         break;
 
       default:

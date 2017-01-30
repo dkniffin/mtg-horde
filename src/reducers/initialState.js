@@ -6,7 +6,7 @@ const deckCards = rawdeck.map((cardData, i) => {
   return {
     cardData: cardData,
     tapped: false,
-    i
+    index: i
   }
 })
 
