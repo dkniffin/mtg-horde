@@ -2,10 +2,11 @@ import Immutable from 'immutable'
 import rawdeck from '../../decks/zombie.json'
 import shuffle from 'array-shuffle'
 
-const deckCards = rawdeck.map((cardData) => {
+const deckCards = rawdeck.map((cardData, i) => {
   return {
     cardData: cardData,
-    tapped: false
+    tapped: false,
+    i
   }
 })
 

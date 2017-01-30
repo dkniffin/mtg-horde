@@ -1,4 +1,5 @@
 import { phases, nextPhaseIdx } from '../helpers/phaseHelper.js'
+import { abilitiesFor } from '../helpers/cardHelper.js'
 
 export const nextPhase = () => {
   return (dispatch, getState) => {
@@ -32,8 +33,11 @@ export const nextPhase = () => {
         break;
       case 'HORDE_PLAY':
         /*
-          Horde Play - The Survivors are done reacting. Move pending cards to permanent zone.
+          Horde Play - The Survivors are done reacting. Move pending cards to permanent zone, and
+          play cards from hand, and cards from the graveyard with flashback or unearth
         */
+
+        // Move pending to field
         const pendingCards = getState().get('pending')
 
         const numPending = pendingCards.size
@@ -47,19 +51,46 @@ export const nextPhase = () => {
         const permanents = grouped.get(false) || []
 
         dispatch ({
-          type: "REMOVE_CARDS_FROM_PENDING",
+          type: 'REMOVE_CARDS_FROM_PENDING',
           number: numPending
         })
 
         dispatch ({
-          type: "ADD_CARDS_TO_PERMANENT_ZONE",
+          type: 'ADD_CARDS_TO_PERMANENT_ZONE',
           cards: permanents
         })
 
         dispatch ({
-          type: "ADD_CARDS_TO_GRAVEYARD",
+          type: 'ADD_CARDS_TO_GRAVEYARD',
           cards: nonPermanents
         })
+
+        // Cast any cards from graveyard or hand
+        const fromGraveyard = getState().get('graveyard').filter((card) => {
+          // TODO: This is a little simplistic. There are other cards that allow you to cast things
+          // from the graveyard, like Past in Flames. Really, we need a way to define arbitrary
+          // functions that define the behavior of the card, and get called at the appropriate times
+          const abilities = abilitiesFor(card)
+          return abilities.includes('unearth') || abilities.includes('flashback')
+          // return /(flashback|unearth)/i.test(card.getIn(['cardData', 'text']))
+        })
+        const hand = getState().get('hand')
+
+        dispatch ({
+          type: 'ADD_CARDS_TO_PENDING',
+          cards: fromGraveyard.concat(hand)
+        })
+
+        dispatch ({
+          type: 'REMOVE_CARDS_FROM_HAND',
+          number: hand.size
+        })
+
+        dispatch({
+          type: 'REMOVE_CARDS_FROM_GRAVEYARD',
+          cards: fromGraveyard
+        })
+
         break;
       default:
         break;
