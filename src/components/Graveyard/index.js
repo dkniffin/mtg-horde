@@ -14,7 +14,11 @@ class Graveyard extends Component {
           onRemoveCard={this.props.onExile}
           removeCardText="Exile">
           {topCardImage !== undefined &&
-            <img className="cardImage" src={topCardImage} alt="graveyard" />
+            <img
+              className="cardImage"
+              src={topCardImage}
+              alt="graveyard"
+              onClick={this.props.openGraveyardModal}/>
           }
         </CardPile>
       </div>

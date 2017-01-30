@@ -12,3 +12,14 @@ export const exileCards = (number) => {
     })
   }
 }
+
+export const openGraveyardModal = () => {
+  return (dispatch, getState) => {
+    console.log('here');
+    const cards = getState().get("graveyard");
+    dispatch({
+      type: "OPEN_LIST_MODAL",
+      cards
+    })
+  }
+}
