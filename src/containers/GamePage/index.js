@@ -28,9 +28,6 @@ class GamePage extends Component {
         <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
         <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
-        <PlaneswalkerCounter count={this.props.planeswalkers}
-                             onAdd={this.props.addPlaneswalker}
-                             onRemove={this.props.removePlaneswalker} />
         <CardZone id="PendingZone"
                   cards={this.props.pending}
                   onCardClick={this.props.openCardModal} />
