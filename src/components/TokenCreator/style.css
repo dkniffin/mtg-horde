@@ -1,0 +1,29 @@
+.TokenCreator {
+  position: fixed;
+}
+
+.TokenCreator #tokenStats {
+  position: absolute;
+  top: 55px;
+  left: 22px;
+  color: white;
+}
+
+.TokenCreator img {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 64px;
+  height: 89px;
+  display: block;
+}
+
+.tokenStatButton {
+  position: relative;
+  width: 32px;
+  bottom: 0px;
+}
+
+.tokenSpawnButton {
+  display: block;
+  width: 64px;
+}

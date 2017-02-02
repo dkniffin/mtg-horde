@@ -9,6 +9,7 @@ import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
 import CardModal from "../../components/CardModal"
+import TokenCreator from "../../components/TokenCreator"
 // import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
@@ -46,6 +47,11 @@ class GamePage extends Component {
                    onGraveyard={this.props.sendToGraveyard}
                    onExile={this.props.sendToExile}
                    onLibrary={this.props.sendToLibrary} />
+        <TokenCreator onSpawn={this.props.spawnToken}
+                      onPlus={this.props.buffToken}
+                      onMinus={this.props.debuffToken}
+                      tokenPower="3"
+                      tokenToughness="3" />
       </div>
     )
   }

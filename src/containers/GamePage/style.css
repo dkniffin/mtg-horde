@@ -10,7 +10,13 @@
 
 .Hand {
   position: absolute;
-  top: 20px;
+  top: 10px;
+  left: 330px;
+}
+
+.TokenCreator {
+  position: absolute;
+  top: 100px;
   left: 330px;
 }
 
