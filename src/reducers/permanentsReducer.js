@@ -1,7 +1,7 @@
 function updateCardTappedTo(permanents, cardIndex, value) {
   return permanents.map((card) => {
-    if (card.get('index') == cardIndex) {
-      if (value == 'toggle') {
+    if (card.get('index') === cardIndex) {
+      if (value === 'toggle') {
         const tapped = card.get('tapped')
         return card.set('tapped', !tapped)
       } else {
@@ -27,6 +27,12 @@ const permanentsReducer = (permanents = [], action) => {
       })
     case 'ADD_CARDS_TO_PERMANENT_ZONE':
       return permanents.concat(action.cards)
+    case 'REMOVE_CARD':
+      if (action.cardLocation === 'permanents') {
+        return permanents.delete(action.i)
+      } else {
+        return permanents
+      }
     default:
       return permanents
   }

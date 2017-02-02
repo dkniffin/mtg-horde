@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
+import Immutable from 'immutable'
 import './style.css'
 
 import Deck from "../../components/Deck"
@@ -8,11 +9,11 @@ import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
 import CardModal from "../../components/CardModal"
-import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
+// import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
 import { exileCards } from "../../actions/graveyardActions"
-import { toggleTapped, openCardModal } from "../../actions/cardActions"
+import { toggleTapped, openCardModal, sendToGraveyard, sendToExile, sendToLibrary } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
 import { closeModal } from "../../actions/modalActions"
@@ -29,15 +30,22 @@ class GamePage extends Component {
         <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
         <CardZone id="PendingZone"
+                  location='pending'
                   cards={this.props.pending}
                   onCardClick={this.props.openCardModal} />
         <CardZone id="PermanentZone"
+                  location='permanents'
                   cards={this.props.permanents}
                   onTap={this.props.toggleTapped}
                   onCardClick={this.props.openCardModal} />
-        <CardModal open={this.props.cardModalOpen}
-                   card={this.props.cardModalData}
-                   closeModal={this.props.closeModal} />
+        <CardModal open={this.props.cardModal.open}
+                   cardIndex={this.props.cardModal.cardIndex}
+                   cardLocation={this.props.cardModal.cardLocation}
+                   card={this.props.cardModal.cardData}
+                   onClose={this.props.closeModal}
+                   onGraveyard={this.props.sendToGraveyard}
+                   onExile={this.props.sendToExile}
+                   onLibrary={this.props.sendToLibrary} />
       </div>
     )
   }
@@ -45,6 +53,12 @@ class GamePage extends Component {
 
 export default connect(
   (state) => {
+    const modalCardLocation = state.getIn(['cardModal', 'cardLocation'])
+    const modalCardIndex = state.getIn(['cardModal', 'cardIndex'])
+    const modalCardData = modalCardLocation ?
+      state.get(modalCardLocation).find((card) => card.get('index') === modalCardIndex)
+      : Immutable.fromJS({})
+
     return {
       phase: phases[state.get("phase")],
       planeswalkers: state.get("planeswalkers"),
@@ -53,8 +67,12 @@ export default connect(
       pending: state.get("pending"),
       permanents: state.get("permanents"),
       graveyard: state.get("graveyard"),
-      cardModalOpen: state.getIn(["cardModal", "open"]),
-      cardModalData: state.getIn(["cardModal", "card"])
+      cardModal: {
+        open: state.getIn(["cardModal", "open"]),
+        cardLocation: modalCardLocation,
+        cardIndex: modalCardIndex,
+        cardData: modalCardData
+      }
     }
   },
   {
@@ -67,5 +85,8 @@ export default connect(
     drawCards,
     closeModal,
     addPlaneswalker,
-    removePlaneswalker
+    removePlaneswalker,
+    sendToGraveyard,
+    sendToExile,
+    sendToLibrary
   })(GamePage)

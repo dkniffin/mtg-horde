@@ -15,7 +15,7 @@ class CardZone extends Component {
                          imageUrl={card.getIn(['cardData', 'imageUrl'])}
                          tapped={card.get('tapped')}
                          onTap={onTap}
-                         onClick={() => this.props.onCardClick(card) }/>
+                         onClick={() => this.props.onCardClick(this.props.location, card) }/>
           })
         }
       </div>

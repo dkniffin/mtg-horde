@@ -4,6 +4,10 @@
   left: 50%;
 }
 
+.CardModal:focus {
+  outline: none;
+}
+
 .CardModal .CardHolder {
   position: relative;
   top: -200px;
@@ -19,4 +23,12 @@
   top: 5px;
   right: 5px;
   font-weight: bold;
+}
+
+.CardModal .controlButtons {
+  position: absolute;
+  left: 101%;
+  top: 0px;
+  width: 120px;
+  border: none;
 }

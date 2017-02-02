@@ -17,7 +17,8 @@ export default Immutable.fromJS({
   planeswalkers: 0,
   cardModal: {
     open: false,
-    card: {}
+    cardIndex: null,
+    cardLocation: null
   },
   deck: deck, // Cards currently in the library
   pending: [], // Cards that haven't hit the field yet
