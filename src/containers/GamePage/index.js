@@ -27,32 +27,46 @@ class GamePage extends Component {
   render() {
     return (
       <div className="GamePage">
-        <PhaseTracker phase={this.props.phase} onNextPhase={this.props.nextPhase}/>
-        <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards} openGraveyardModal={this.props.openGraveyardModal}/>
-        <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
-        <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
-        <CardZone id="PendingZone"
-                  location='pending'
-                  cards={this.props.pending}
-                  onCardClick={this.props.openCardModal} />
-        <CardZone id="PermanentZone"
-                  location='permanents'
-                  cards={this.props.permanents}
-                  onTap={this.props.toggleTapped}
-                  onCardClick={this.props.openCardModal} />
-        <CardModal open={this.props.cardModal.open}
-                   cardIndex={this.props.cardModal.cardIndex}
-                   cardLocation={this.props.cardModal.cardLocation}
-                   card={this.props.cardModal.cardData}
-                   onClose={this.props.closeModal}
-                   onGraveyard={this.props.sendToGraveyard}
-                   onExile={this.props.sendToExile}
-                   onLibrary={this.props.sendToLibrary} />
-        <TokenCreator onSpawn={this.props.spawnToken}
-                      onPlus={this.props.buffToken}
-                      onMinus={this.props.debuffToken}
-                      tokenPower="3"
-                      tokenToughness="3" />
+        <PhaseTracker
+          phase={this.props.phase}
+          onNextPhase={this.props.nextPhase}/>
+        <Graveyard
+          cards={this.props.graveyard}
+          onExile={this.props.exileCards}
+          openGraveyardModal={this.props.openGraveyardModal}/>
+        <Deck
+          cards={this.props.deck}
+          onDiscard={this.props.deckDiscard}/>
+        <Hand
+          cards={this.props.hand}
+          onDiscard={this.props.handDiscard}
+          onDraw={this.props.drawCards}/>
+        <CardZone
+          id="PendingZone"
+          location='pending'
+          cards={this.props.pending}
+          onCardClick={this.props.openCardModal} />
+        <CardZone
+          id="PermanentZone"
+          location='permanents'
+          cards={this.props.permanents}
+          onTap={this.props.toggleTapped}
+          onCardClick={this.props.openCardModal} />
+        <CardModal
+          open={this.props.cardModal.open}
+          cardIndex={this.props.cardModal.cardIndex}
+          cardLocation={this.props.cardModal.cardLocation}
+          card={this.props.cardModal.cardData}
+          onClose={this.props.closeModal}
+          onGraveyard={this.props.sendToGraveyard}
+          onExile={this.props.sendToExile}
+          onLibrary={this.props.sendToLibrary} />
+        <TokenCreator
+          onSpawn={this.props.spawnToken}
+          onPlus={this.props.buffToken}
+          onMinus={this.props.debuffToken}
+          tokenPower="3"
+          tokenToughness="3" />
         <ListModal
           cards={this.props.listModal}
           onClose={this.props.closeGraveyardModal}/>
