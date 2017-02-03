@@ -3,7 +3,7 @@ const listModalReducer = (listModal = [], action) => {
     case "OPEN_LIST_MODAL":
       return listModal.concat(action.cards);
     case "CLOSE_LIST_MODAL":
-      return listModal;
+      return [];
     default:
       return listModal;
   }

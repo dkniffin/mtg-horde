@@ -14,7 +14,7 @@ import TokenCreator from "../../components/TokenCreator"
 // import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
-import { exileCards, openGraveyardModal } from "../../actions/graveyardActions"
+import { exileCards, openGraveyardModal, closeGraveyardModal } from "../../actions/graveyardActions"
 import { toggleTapped, openCardModal, sendToGraveyard, sendToExile, sendToLibrary } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
@@ -53,7 +53,9 @@ class GamePage extends Component {
                       onMinus={this.props.debuffToken}
                       tokenPower="3"
                       tokenToughness="3" />
-        <ListModal cards={this.props.listModal}/>
+        <ListModal
+          cards={this.props.listModal}
+          onClose={this.props.closeGraveyardModal}/>
       </div>
     )
   }
@@ -81,7 +83,6 @@ export default connect(
         cardIndex: modalCardIndex,
         cardData: modalCardData
       },
-      phase: phases[state.get("phase")],
       listModal: state.get("listModal")
     }
   },
@@ -99,5 +100,6 @@ export default connect(
     sendToGraveyard,
     sendToExile,
     sendToLibrary,
-    openGraveyardModal
+    openGraveyardModal,
+    closeGraveyardModal
   })(GamePage)

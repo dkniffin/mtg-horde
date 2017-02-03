@@ -18,6 +18,7 @@ class ListModal extends Component {
             })
           }
         </div>
+        <button className="CloseModalButton" onClick={this.props.onClose}>X</button>
       </Modal>
     );
   }
