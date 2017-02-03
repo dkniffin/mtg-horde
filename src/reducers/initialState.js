@@ -26,5 +26,9 @@ export default Immutable.fromJS({
   hand: [], // Cards in the Horde's hand
   graveyard: [], // Cards in the graveyard
   exile: [], // Cards in exile,
-  listModal: []
+  listModal: [],
+  overwhelmingNumbers: {
+    counter: 0,
+    emblems: 1
+  }
 })

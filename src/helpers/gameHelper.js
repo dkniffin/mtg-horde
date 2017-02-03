@@ -68,11 +68,18 @@ export default {
   hordeDraw: function(dispatch, getState) {
     const deck = getState().get('deck')
 
-    const nonTokenIdx = deck.findLastIndex((card) => {
-      return card.getIn(['cardData', 'layout']) !== "token"
-    })
+    const numNonTokensToDraw = getState().getIn(['overwhelmingNumbers', 'emblems']);
 
-    const numFlipped = deck.size - nonTokenIdx
+    const nonTokenIndices = deck.map((card, index) => {
+      const isToken = card.getIn(['cardData', 'layout']) !== "token"
+      return [isToken, index]
+    }).filter(([isToken, index]) => {
+      return isToken
+    }).map(([isToken, index]) => index)
+
+    const drawToIndex = nonTokenIndices.get(-numNonTokensToDraw);
+
+    const numFlipped = deck.size - drawToIndex
     const flippedCards = deck.slice(-numFlipped)
 
     dispatch({
