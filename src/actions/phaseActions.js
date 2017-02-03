@@ -6,6 +6,10 @@ export const nextPhase = () => {
     const nextPhase = phases[nextPhaseIdx(getState().get('phase'))].id
 
     switch (nextPhase) {
+      case 'SURVIVORS_TURN':
+        Game.discardHandDown(dispatch, getState);
+        break;
+
       case 'HORDE_DRAW':
         /*
           Horde Draw - Untap, then flip cards from the top of the library, until a non-token is
