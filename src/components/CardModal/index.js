@@ -11,6 +11,8 @@ class CardModal extends Component {
     this.handleGraveyard = this.handleGraveyard.bind(this);
     this.handleExile = this.handleExile.bind(this);
     this.handleLibrary = this.handleLibrary.bind(this);
+    this.handleHand = this.handleHand.bind(this);
+    this.handleBattlefield = this.handleBattlefield.bind(this);
   }
 
   handleGraveyard(event) {
@@ -23,6 +25,14 @@ class CardModal extends Component {
   }
   handleLibrary(event) {
     this.props.onLibrary(this.props.cardLocation, this.props.cardIndex)
+    this.props.onClose()
+  }
+  handleHand(event) {
+    this.props.onHand(this.props.cardLocation, this.props.cardIndex)
+    this.props.onClose()
+  }
+  handleBattlefield(event) {
+    this.props.onBattlefield(this.props.cardLocation, this.props.cardIndex)
     this.props.onClose()
   }
 
@@ -40,9 +50,21 @@ class CardModal extends Component {
               src={this.props.card.getIn(['cardData', 'imageUrl'])} role="presentation" />
             <button className="CloseModalButton" onClick={this.props.onClose}>X</button>
             <div className="controlButtons">
-              <button onClick={this.handleGraveyard}>Send to Graveyard</button>
-              <button onClick={this.handleExile}>Send to Exile</button>
-              <button onClick={this.handleLibrary}>Send to Library</button>
+              {this.props.cardLocation !== 'graveyard' &&
+                <button onClick={this.handleGraveyard}>Send to Graveyard</button>
+              }
+              {this.props.cardLocation !== 'exile' &&
+                <button onClick={this.handleExile}>Send to Exile</button>
+              }
+              {this.props.cardLocation !== 'deck' &&
+                <button onClick={this.handleLibrary}>Send to Library</button>
+              }
+              {this.props.cardLocation !== 'hand' &&
+                <button onClick={this.handleHand}>Send to Hand</button>
+              }
+              {this.props.cardLocation !== 'permanents' &&
+                <button onClick={this.handleBattlefield}>Send to Battlefield</button>
+              }
             </div>
           </div>
         }

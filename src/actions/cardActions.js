@@ -67,3 +67,25 @@ export const sendToLibrary = (cardLocation, cardIndex) => {
     })
   }
 }
+
+export const sendToHand = (cardLocation, cardIndex) => {
+  return (dispatch, getState) => {
+    const card = pullCardFromCurrentLocation(dispatch, getState, cardLocation, cardIndex)
+
+    dispatch({
+      type: 'ADD_CARDS_TO_HAND',
+      cards: [card]
+    })
+  }
+}
+
+export const sendToBattlefield = (cardLocation, cardIndex) => {
+  return (dispatch, getState) => {
+    const card = pullCardFromCurrentLocation(dispatch, getState, cardLocation, cardIndex)
+
+    dispatch({
+      type: 'ADD_CARDS_TO_BATTLEFIELD',
+      cards: [card]
+    })
+  }
+}

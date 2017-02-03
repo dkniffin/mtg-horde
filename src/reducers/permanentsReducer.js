@@ -25,7 +25,7 @@ const permanentsReducer = (permanents = [], action) => {
       return permanents.map((card) => {
         return card.set('tapped', false)
       })
-    case 'ADD_CARDS_TO_PERMANENT_ZONE':
+    case 'ADD_CARDS_TO_BATTLEFIELD':
       return permanents.concat(action.cards)
     case 'REMOVE_CARD':
       if (action.cardLocation === 'permanents') {

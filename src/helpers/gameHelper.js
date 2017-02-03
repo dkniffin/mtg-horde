@@ -21,7 +21,7 @@ export default {
     })
 
     dispatch ({
-      type: 'ADD_CARDS_TO_PERMANENT_ZONE',
+      type: 'ADD_CARDS_TO_BATTLEFIELD',
       cards: permanents
     })
 

@@ -15,7 +15,10 @@ import TokenCreator from "../../components/TokenCreator"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
 import { exileCards, openGraveyardModal, closeGraveyardModal } from "../../actions/graveyardActions"
-import { toggleTapped, openCardModal, sendToGraveyard, sendToExile, sendToLibrary } from "../../actions/cardActions"
+import {
+  toggleTapped, openCardModal, sendToGraveyard, sendToExile,
+  sendToLibrary, sendToHand, sendToBattlefield
+} from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
 import { closeModal } from "../../actions/modalActions"
@@ -60,7 +63,9 @@ class GamePage extends Component {
           onClose={this.props.closeModal}
           onGraveyard={this.props.sendToGraveyard}
           onExile={this.props.sendToExile}
-          onLibrary={this.props.sendToLibrary} />
+          onLibrary={this.props.sendToLibrary}
+          onHand={this.props.sendToHand}
+          onBattlefield={this.props.sendToBattlefield} />
         <TokenCreator
           onSpawn={this.props.spawnToken}
           onPlus={this.props.buffToken}
@@ -116,6 +121,8 @@ export default connect(
     sendToGraveyard,
     sendToExile,
     sendToLibrary,
+    sendToHand,
+    sendToBattlefield,
     openGraveyardModal,
     closeGraveyardModal
   })(GamePage)
