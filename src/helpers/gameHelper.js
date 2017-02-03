@@ -68,7 +68,7 @@ export default {
   hordeDraw: function(dispatch, getState) {
     const deck = getState().get('deck')
 
-    const numNonTokensToDraw = getState().getIn(['overwhelmingNumbers', 'emblems']);
+    const numNonTokensToDraw = getState().getIn(['drawCounter', 'draw']);
 
     const nonTokenIndices = deck.map((card, index) => {
       const isToken = card.getIn(['cardData', 'layout']) !== "token"
@@ -83,12 +83,12 @@ export default {
     const flippedCards = deck.slice(-numFlipped)
 
     dispatch({
-      type: "REMOVE_CARDS_FROM_DECK",
+      type: 'REMOVE_CARDS_FROM_DECK',
       number: numFlipped
     })
 
     dispatch({
-      type: "ADD_CARDS_TO_PENDING",
+      type: 'ADD_CARDS_TO_PENDING',
       cards: flippedCards
     })
   },

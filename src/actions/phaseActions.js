@@ -39,7 +39,8 @@ export const nextPhase = () => {
         break;
     }
     dispatch({
-      type: "NEXT_PHASE"
+      type: "NEXT_PHASE",
+      phaseKey: nextPhase
     })
   }
 }

@@ -10,6 +10,7 @@ import hand from "./handReducer"
 import cardModal from "./cardModalReducer"
 import planeswalkers from "./planeswalkerReducer"
 import listModal from "./listModalReducer"
+import drawCounter from "./drawCounterReducer"
 
 export default combineReducers({
   deck,
@@ -21,5 +22,6 @@ export default combineReducers({
   phase,
   cardModal,
   planeswalkers,
-  listModal
+  listModal,
+  drawCounter
 })

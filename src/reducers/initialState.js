@@ -27,8 +27,9 @@ export default Immutable.fromJS({
   graveyard: [], // Cards in the graveyard
   exile: [], // Cards in exile,
   listModal: [],
-  overwhelmingNumbers: {
+  // https://github.com/dkniffin/mtg-horde/issues/7
+  drawCounter: {
     counter: 0,
-    emblems: 1
+    draw: 1
   }
 })
