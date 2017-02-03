@@ -25,5 +25,6 @@ export default Immutable.fromJS({
   permanents: [], // Cards in the permanent zone
   hand: [], // Cards in the Horde's hand
   graveyard: [], // Cards in the graveyard
-  exile: [] // Cards in exile
+  exile: [], // Cards in exile,
+  listModal: []
 })

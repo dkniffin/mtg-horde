@@ -8,12 +8,13 @@ import Hand from "../../components/Hand"
 import Graveyard from "../../components/Graveyard"
 import CardZone from "../../components/CardZone"
 import PhaseTracker from "../../components/PhaseTracker"
+import ListModal from "../../components/ListModal"
 import CardModal from "../../components/CardModal"
 import TokenCreator from "../../components/TokenCreator"
 // import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
 
 import { discardCards as deckDiscard } from "../../actions/deckActions"
-import { exileCards } from "../../actions/graveyardActions"
+import { exileCards, openGraveyardModal, closeGraveyardModal } from "../../actions/graveyardActions"
 import { toggleTapped, openCardModal, sendToGraveyard, sendToExile, sendToLibrary } from "../../actions/cardActions"
 import { nextPhase } from "../../actions/phaseActions"
 import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
@@ -27,7 +28,7 @@ class GamePage extends Component {
     return (
       <div className="GamePage">
         <PhaseTracker phase={this.props.phase} onNextPhase={this.props.nextPhase}/>
-        <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards}/>
+        <Graveyard cards={this.props.graveyard} onExile={this.props.exileCards} openGraveyardModal={this.props.openGraveyardModal}/>
         <Deck cards={this.props.deck} onDiscard={this.props.deckDiscard}/>
         <Hand cards={this.props.hand} onDiscard={this.props.handDiscard} onDraw={this.props.drawCards}/>
         <CardZone id="PendingZone"
@@ -52,6 +53,9 @@ class GamePage extends Component {
                       onMinus={this.props.debuffToken}
                       tokenPower="3"
                       tokenToughness="3" />
+        <ListModal
+          cards={this.props.listModal}
+          onClose={this.props.closeGraveyardModal}/>
       </div>
     )
   }
@@ -78,7 +82,8 @@ export default connect(
         cardLocation: modalCardLocation,
         cardIndex: modalCardIndex,
         cardData: modalCardData
-      }
+      },
+      listModal: state.get("listModal")
     }
   },
   {
@@ -94,5 +99,7 @@ export default connect(
     removePlaneswalker,
     sendToGraveyard,
     sendToExile,
-    sendToLibrary
+    sendToLibrary,
+    openGraveyardModal,
+    closeGraveyardModal
   })(GamePage)

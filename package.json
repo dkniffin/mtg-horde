@@ -4,7 +4,6 @@
   "private": true,
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
-    "mtgsdk": "file:../mtg-sdk-javascript/",
     "react-scripts": "0.8.5"
   },
   "dependencies": {

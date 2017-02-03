@@ -9,6 +9,7 @@ import pending from "./pendingReducer"
 import hand from "./handReducer"
 import cardModal from "./cardModalReducer"
 import planeswalkers from "./planeswalkerReducer"
+import listModal from "./listModalReducer"
 
 export default combineReducers({
   deck,
@@ -19,5 +20,6 @@ export default combineReducers({
   hand,
   phase,
   cardModal,
-  planeswalkers
+  planeswalkers,
+  listModal
 })
