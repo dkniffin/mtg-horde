@@ -69,7 +69,9 @@ class GamePage extends Component {
           tokenToughness="3" />
         <ListModal
           cards={this.props.listModal}
-          onClose={this.props.closeGraveyardModal}/>
+          location='graveyard'
+          onClose={this.props.closeGraveyardModal}
+          onCardClick={this.props.openCardModal} />
       </div>
     )
   }

@@ -10,6 +10,9 @@ export const toggleTapped = (cardIndex) => {
 export const openCardModal = (location, card) => {
   return (dispatch, getState) => {
     dispatch({
+      type: 'CLOSE_LIST_MODAL'
+    })
+    dispatch({
       type: 'OPEN_CARD_MODAL',
       card,
       location

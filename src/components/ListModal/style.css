@@ -1,4 +1,6 @@
-.test {
-  color: red;
-  font-size: 24pt;
+.ListModal {
+}
+
+.ListModal .Card {
+  margin-left: 5px;
 }

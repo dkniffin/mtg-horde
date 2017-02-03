@@ -7,14 +7,16 @@ import './style.css';
 class ListModal extends Component {
   render() {
     return (
-      <Modal isOpen={this.props.cards.size > 0} contentLabel="Graveyard">
-        <div id={this.props.id} className="ModalCardList">
+      <Modal
+        isOpen={this.props.cards.size > 0}
+        contentLabel="Graveyard">
+        <div id={this.props.id} className="ListModal">
           {
             this.props.cards.map((card, i) => {
               return <Card key={"card-" + i}
                            imageUrl={card.getIn(['cardData', 'imageUrl'])}
                            tapped={card.get('tapped')}
-                           onTap={() => this.props.onTap(i)} />
+                           onClick={() => this.props.onCardClick(this.props.location, card) }/>
             })
           }
         </div>
