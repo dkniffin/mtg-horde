@@ -10,6 +10,12 @@ const graveyardReducer = (graveyard = [], action) => {
       } else {
         return graveyard.slice(0, -action.number)
       }
+    case 'REMOVE_CARD':
+      if (action.cardLocation === 'graveyard') {
+        return graveyard.delete(action.i)
+      } else {
+        return graveyard
+      }
     default:
       return graveyard
   }

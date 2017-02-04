@@ -8,7 +8,7 @@ export const exileCards = (number) =>
 
     dispatch({
       type: 'EXILE_CARDS',
-      exiledCards
+      cards: exiledCards
     })
   }
 
