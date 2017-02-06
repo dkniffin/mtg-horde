@@ -1,4 +1,5 @@
 import { abilitiesFor } from './cardHelper.js'
+import shuffle from 'array-shuffle'
 
 export default {
   resolvePending: function(dispatch, getState) {
@@ -111,5 +112,22 @@ export default {
     dispatch({
       type: 'UNTAP_ALL'
     })
+  },
+
+  discardHandDown: function(dispatch, getState) {
+    const hand = getState().get('hand')
+
+    if (hand.size > 7) {
+      const toDiscard = hand.size - 7
+
+      dispatch({
+        type: 'RESHUFFLE_HAND'
+      })
+      
+      dispatch({
+        type: 'REMOVE_CARDS_FROM_HAND',
+        number: toDiscard
+      })
+    }
   }
 }
