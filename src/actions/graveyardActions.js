@@ -1,9 +1,14 @@
+import shuffle from 'array-shuffle'
+import Immutable from 'immutable'
+
 export const exileCards = (number) =>
   (dispatch, getState) => {
-    const exiledCards = getState().get("graveyard").slice(-number);
+    const graveyard = getState().get('graveyard')
+    const shuffled = Immutable.List(shuffle(graveyard.toArray()))
+    const exiledCards = shuffled.slice(-number);
     dispatch({
       type: 'REMOVE_CARDS_FROM_GRAVEYARD',
-      number
+      cards: exiledCards
     })
 
     dispatch({
