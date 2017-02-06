@@ -1,7 +1,10 @@
 const graveyardReducer = (graveyard = [], action) => {
   switch (action.type) {
     case 'ADD_CARDS_TO_GRAVEYARD':
-      return graveyard.concat(action.cards)
+      const untapped = action.cards.map((card) => {
+        return card.set('tapped', false);
+      })
+      return graveyard.concat(untapped)
     case 'REMOVE_CARDS_FROM_GRAVEYARD':
       if (action.cards) {
         return graveyard.filterNot((card) => {
