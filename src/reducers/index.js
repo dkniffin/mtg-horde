@@ -1,16 +1,18 @@
-import { combineReducers } from "redux-immutable"
+import { combineReducers } from 'redux-immutable'
 
-import deck from "./deckReducer"
-import graveyard from "./graveyardReducer"
-import exile from "./exileReducer"
-import permanents from "./permanentsReducer"
-import phase from "./phaseReducer"
-import pending from "./pendingReducer"
-import hand from "./handReducer"
-import cardModal from "./cardModalReducer"
-import planeswalkers from "./planeswalkerReducer"
-import listModal from "./listModalReducer"
-import drawCounter from "./drawCounterReducer"
+import deck from './deckReducer'
+import graveyard from './graveyardReducer'
+import exile from './exileReducer'
+import permanents from './permanentsReducer'
+import phase from './phaseReducer'
+import pending from './pendingReducer'
+import hand from './handReducer'
+import cardModal from './cardModalReducer'
+import planeswalkers from './planeswalkerReducer'
+import listModal from './listModalReducer'
+import drawCounter from './drawCounterReducer'
+import tokenSpawner from './tokenSpawnerReducer'
+import nextIndex from './indexReducer'
 
 export default combineReducers({
   deck,
@@ -23,5 +25,7 @@ export default combineReducers({
   cardModal,
   planeswalkers,
   listModal,
-  drawCounter
+  drawCounter,
+  tokenSpawner,
+  nextIndex
 })

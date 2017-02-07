@@ -1,28 +1,29 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux"
+import { connect } from 'react-redux'
 import Immutable from 'immutable'
 import './style.css'
 
-import Deck from "../../components/Deck"
-import Hand from "../../components/Hand"
-import Graveyard from "../../components/Graveyard"
-import CardZone from "../../components/CardZone"
-import PhaseTracker from "../../components/PhaseTracker"
-import ListModal from "../../components/ListModal"
-import CardModal from "../../components/CardModal"
-import TokenCreator from "../../components/TokenCreator"
-// import PlaneswalkerCounter from "../../components/PlaneswalkerCounter"
+import Deck from '../../components/Deck'
+import Hand from '../../components/Hand'
+import Graveyard from '../../components/Graveyard'
+import CardZone from '../../components/CardZone'
+import PhaseTracker from '../../components/PhaseTracker'
+import ListModal from '../../components/ListModal'
+import CardModal from '../../components/CardModal'
+import TokenCreator from '../../components/TokenCreator'
+// import PlaneswalkerCounter from '../../components/PlaneswalkerCounter'
 
-import { discardCards as deckDiscard } from "../../actions/deckActions"
-import { exileCards, openGraveyardModal, closeGraveyardModal } from "../../actions/graveyardActions"
+import { discardCards as deckDiscard } from '../../actions/deckActions'
+import { exileCards, openGraveyardModal, closeGraveyardModal } from '../../actions/graveyardActions'
 import {
   toggleTapped, openCardModal, sendToGraveyard, sendToExile,
   sendToLibrary, sendToHand, sendToBattlefield
-} from "../../actions/cardActions"
-import { nextPhase } from "../../actions/phaseActions"
-import { discardCards as handDiscard, drawCards } from "../../actions/handActions"
-import { closeModal } from "../../actions/modalActions"
-import { addPlaneswalker, removePlaneswalker } from "../../actions/planeswalkerActions"
+} from '../../actions/cardActions'
+import { nextPhase } from '../../actions/phaseActions'
+import { discardCards as handDiscard, drawCards } from '../../actions/handActions'
+import { closeModal } from '../../actions/modalActions'
+import { addPlaneswalker, removePlaneswalker } from '../../actions/planeswalkerActions'
+import { buffTokenPower, debuffTokenPower, buffTokenToughness, debuffTokenToughness, spawnToken } from '../../actions/tokenActions'
 
 import { phases } from '../../helpers/phaseHelper.js'
 
@@ -68,10 +69,12 @@ class GamePage extends Component {
           onBattlefield={this.props.sendToBattlefield} />
         <TokenCreator
           onSpawn={this.props.spawnToken}
-          onPlus={this.props.buffToken}
-          onMinus={this.props.debuffToken}
-          tokenPower="3"
-          tokenToughness="3" />
+          onDebuffPower={this.props.debuffTokenPower}
+          onBuffPower={this.props.buffTokenPower}
+          onDebuffToughness={this.props.debuffTokenToughness}
+          onBuffToughness={this.props.buffTokenToughness}
+          tokenPower={this.props.tokenPower}
+          tokenToughness={this.props.tokenToughness} />
         <ListModal
           cards={this.props.listModal}
           location='graveyard'
@@ -91,20 +94,22 @@ export default connect(
       : Immutable.fromJS({})
 
     return {
-      phase: phases[state.get("phase")],
-      planeswalkers: state.get("planeswalkers"),
-      deck: state.get("deck"),
-      hand: state.get("hand"),
-      pending: state.get("pending"),
-      permanents: state.get("permanents"),
-      graveyard: state.get("graveyard"),
+      phase: phases[state.get('phase')],
+      planeswalkers: state.get('planeswalkers'),
+      deck: state.get('deck'),
+      hand: state.get('hand'),
+      pending: state.get('pending'),
+      permanents: state.get('permanents'),
+      graveyard: state.get('graveyard'),
       cardModal: {
-        open: state.getIn(["cardModal", "open"]),
+        open: state.getIn(['cardModal', 'open']),
         cardLocation: modalCardLocation,
         cardIndex: modalCardIndex,
         cardData: modalCardData
       },
-      listModal: state.get("listModal")
+      listModal: state.get('listModal'),
+      tokenPower: state.getIn(['tokenSpawner', 'power']),
+      tokenToughness: state.getIn(['tokenSpawner', 'toughness'])
     }
   },
   {
@@ -124,5 +129,10 @@ export default connect(
     sendToHand,
     sendToBattlefield,
     openGraveyardModal,
-    closeGraveyardModal
+    closeGraveyardModal,
+    buffTokenPower,
+    debuffTokenPower,
+    buffTokenToughness,
+    debuffTokenToughness,
+    spawnToken
   })(GamePage)

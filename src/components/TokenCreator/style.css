@@ -1,12 +1,12 @@
 .TokenCreator {
   position: fixed;
+  color: white;
 }
 
 .TokenCreator #tokenStats {
   position: absolute;
   top: 55px;
   left: 22px;
-  color: white;
 }
 
 .TokenCreator img {
@@ -19,8 +19,9 @@
 
 .tokenStatButton {
   position: relative;
-  width: 32px;
+  width: 15px;
   bottom: 0px;
+  padding: 0px;
 }
 
 .tokenSpawnButton {
