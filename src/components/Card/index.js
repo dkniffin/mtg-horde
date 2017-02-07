@@ -12,6 +12,7 @@ class Card extends Component {
         <div className="CardBounds">
           <img src={imgSrc} alt="card" onClick={this.props.onClick} />
         </div>
+        <span className="PTindicator">{this.props.power}/{this.props.toughness}</span>
         {this.props.onTap &&
           <button className="TapCard" onClick={this.props.onTap}>
             <img src="tap-icon.png" role="presentation" />

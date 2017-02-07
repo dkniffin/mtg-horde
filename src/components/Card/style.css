@@ -10,6 +10,20 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+.Card .PTindicator {
+  position: absolute;
+  color: white;
+  bottom: 38px;
+  left: 50%;
+  width: 26px;
+  padding: 4px;
+  margin-left: -16px; /* -(width + padding) / 2 */
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: .8em;
+
+  text-align: center;
+  border-radius: 5px;
+}
 
 .Card img {
   width: 100%;

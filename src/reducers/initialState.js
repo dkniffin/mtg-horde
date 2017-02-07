@@ -6,7 +6,15 @@ const deckCards = rawdeck.map((cardData, i) => {
   return {
     cardData: cardData,
     tapped: false,
-    index: i
+    index: i,
+    counters: {
+      power: 0,
+      toughness: 0
+    },
+    modifiers: {
+      power: 0,
+      toughness: 0
+    }
   }
 })
 
