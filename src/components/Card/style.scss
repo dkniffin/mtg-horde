@@ -12,17 +12,16 @@
 
   .PTindicator {
     position: absolute;
-    color: white;
-    bottom: 38px;
-    left: 50%;
-    width: 26px;
-    padding: 4px;
-    margin-left: -16px; /* -(width + padding) / 2 */
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: .8em;
 
-    text-align: center;
+    bottom: 5px;
+    right: 5px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    font-size: .8em;
     border-radius: 5px;
+    text-align: center;
   }
 
   img {
@@ -59,8 +58,8 @@
     }
 
     .PTindicator {
-      margin-left: -42px;
-      margin-bottom: -52px;
+      margin-right: 50px;
+      margin-bottom: -50px;
     }
   }
 }
