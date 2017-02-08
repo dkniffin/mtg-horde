@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "array-shuffle": "^1.0.1",
+    "es6-requireindex": "^0.3.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-modal": "^1.6.5",

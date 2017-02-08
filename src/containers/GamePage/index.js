@@ -13,17 +13,7 @@ import CardModal from '../../components/CardModal'
 import TokenCreator from '../../components/TokenCreator'
 // import PlaneswalkerCounter from '../../components/PlaneswalkerCounter'
 
-import { discardCards as deckDiscard } from '../../actions/deckActions'
-import { exileCards, openGraveyardModal, closeGraveyardModal } from '../../actions/graveyardActions'
-import {
-  toggleTapped, openCardModal, sendToGraveyard, sendToExile,
-  sendToLibrary, sendToHand, sendToBattlefield
-} from '../../actions/cardActions'
-import { nextPhase } from '../../actions/phaseActions'
-import { discardCards as handDiscard, drawCards } from '../../actions/handActions'
-import { closeModal } from '../../actions/modalActions'
-import { addPlaneswalker, removePlaneswalker } from '../../actions/planeswalkerActions'
-import { buffTokenPower, debuffTokenPower, buffTokenToughness, debuffTokenToughness, spawnToken } from '../../actions/tokenActions'
+import * as actions from '../../actions'
 
 import { phases } from '../../helpers/phaseHelper.js'
 
@@ -112,27 +102,5 @@ export default connect(
       tokenToughness: state.getIn(['tokenSpawner', 'toughness'])
     }
   },
-  {
-    deckDiscard,
-    exileCards,
-    toggleTapped,
-    openCardModal,
-    nextPhase,
-    handDiscard,
-    drawCards,
-    closeModal,
-    addPlaneswalker,
-    removePlaneswalker,
-    sendToGraveyard,
-    sendToExile,
-    sendToLibrary,
-    sendToHand,
-    sendToBattlefield,
-    openGraveyardModal,
-    closeGraveyardModal,
-    buffTokenPower,
-    debuffTokenPower,
-    buffTokenToughness,
-    debuffTokenToughness,
-    spawnToken
-  })(GamePage)
+  actions
+)(GamePage)

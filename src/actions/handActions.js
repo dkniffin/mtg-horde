@@ -1,4 +1,4 @@
-export const discardCards = () => {
+export const handDiscard = () => {
   return (dispatch, getState) => {
     const cards = getState().get('hand').slice(-1)
     dispatch({
