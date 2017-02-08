@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import './style.scss';
 
 class Card extends Component {
   render() {
@@ -11,8 +11,10 @@ class Card extends Component {
       <div className={classes.join(" ")}>
         <div className="CardBounds">
           <img src={imgSrc} alt="card" onClick={this.props.onClick} />
+          {this.props.power && this.props.toughness &&
+            <span className="PTindicator">{this.props.power}/{this.props.toughness}</span>
+          }
         </div>
-        <span className="PTindicator">{this.props.power}/{this.props.toughness}</span>
         {this.props.onTap &&
           <button className="TapCard" onClick={this.props.onTap}>
             <img src="tap-icon.png" role="presentation" />
