@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Immutable from 'immutable'
-import './style.css'
+import './style.scss'
 
 import Deck from '../../components/Deck'
 import Hand from '../../components/Hand'

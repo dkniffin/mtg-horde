@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './style.css';
-import GameForm from './GameForm/index'
+import './style.scss';
+import GameForm from '../../components/GameForm'
 
 class LandingPage extends Component {
   render() {

@@ -7,13 +7,13 @@
   border-radius: 10px;
 
   width: 250px;
-}
 
-.PhaseTracker .CurrentPhaseTitle {
-  font-size: 1.7em;
-}
+  .CurrentPhaseTitle {
+    font-size: 1.7em;
+  }
 
-.CurrentPhaseDescription {
-  font-size: 0.8em;
-  display: block;
+  .CurrentPhaseDescription {
+    font-size: 0.8em;
+    display: block;
+  }
 }

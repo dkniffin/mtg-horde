@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Card from "../Card"
 
-import './style.css';
+import './style.scss';
 
 class ListModal extends Component {
   render() {

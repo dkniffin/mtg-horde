@@ -1,0 +1,12 @@
+.Graveyard {
+  display: inline-block;
+
+  .CardPile {
+    border: 1px dashed white;
+    background-image: none;
+  }
+
+  .cardImage {
+    clip-path: inset(0px 0px 0px 0px round 10px 10px);
+  }
+}
