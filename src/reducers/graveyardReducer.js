@@ -1,10 +1,15 @@
+import Immutable from 'immutable'
+
 const graveyardReducer = (graveyard = [], action) => {
   switch (action.type) {
     case 'ADD_CARDS_TO_GRAVEYARD':
-      const untapped = action.cards.map((card) => {
+      const immutized = Immutable.List(action.cards)
+      const cardsToAdd = immutized.map((card) => {
         return card.set('tapped', false);
+      }).filterNot((card) => {
+        return card.getIn(['cardData', 'layout']) === 'token';
       })
-      return graveyard.concat(untapped)
+      return graveyard.concat(cardsToAdd)
     case 'REMOVE_CARDS_FROM_GRAVEYARD':
       if (action.cards) {
         return graveyard.filterNot((card) => {
