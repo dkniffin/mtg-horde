@@ -1,5 +1,4 @@
 import { abilitiesFor } from './cardHelper.js'
-import shuffle from 'array-shuffle'
 
 export default {
   resolvePending: function(dispatch, getState) {
@@ -123,7 +122,7 @@ export default {
       dispatch({
         type: 'RESHUFFLE_HAND'
       })
-      
+
       dispatch({
         type: 'REMOVE_CARDS_FROM_HAND',
         number: toDiscard
