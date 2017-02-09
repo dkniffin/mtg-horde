@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.scss';
 
+import tokenImage from './zombie-token.jpg'
+
 const TokenCreator = function({tokenPower, tokenToughness, onBuffPower, onDebuffPower, onBuffToughness, onDebuffToughness, onSpawn}) {
   return (
     <div className='TokenCreator' >
-      <img src='http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card' role='presentation'/>
+      <img src={tokenImage} role='presentation'/>
       <span id='tokenStats'>{tokenPower}/{tokenToughness}</span>
       <button className='tokenStatButton' onClick={onDebuffPower}>-</button>
       <button className='tokenStatButton' onClick={onBuffPower}>+</button>/

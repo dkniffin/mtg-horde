@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.scss';
+import cardBack from './card-back.png'
+import tapIcon from './tap-icon.png'
 
 const Card = ({tapped, faceDown, imageUrl, power, toughness, onClick, onTap}) => {
   var classes = ["Card"];
   if (tapped) classes.push("tapped")
-  const imgSrc = faceDown ? "card-back.png" : imageUrl;
+  const imgSrc = faceDown ? cardBack : imageUrl;
 
   return (
     <div className={classes.join(" ")}>
@@ -16,7 +18,7 @@ const Card = ({tapped, faceDown, imageUrl, power, toughness, onClick, onTap}) =>
       </div>
       {onTap &&
         <button className="TapCard" onClick={onTap}>
-          <img src="tap-icon.png" role="presentation" />
+          <img src={tapIcon} role="presentation" />
         </button>
       }
     </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.scss';
 
+import cardBack from './card-back.png'
+
 import CardPile from "../CardPile"
 
 const Deck = function({cards, onDiscard}) {
@@ -12,7 +14,7 @@ const Deck = function({cards, onDiscard}) {
         onRemoveCard={onDiscard}
         removeCardText="Discard" >
         {cards.size > 0 &&
-          <img className="cardImage" src="/card-back.png" alt="deck" />
+          <img className="cardImage" src={cardBack} alt="deck" />
         }
       </CardPile>
     </div>
