@@ -1,5 +1,3 @@
-# This is a work in progress, and isn't ready for prime-time yet.
-
 # MTG Horde Player
 
 This tool is a helper for playing Horde, which is a cooperative format for Magic: The Gathering, where one or more players can play against a "dumb" deck.
@@ -39,14 +37,13 @@ Sources:
 - http://mtgsalvation.gamepedia.com/Horde_Magic
 - http://www.mtgsalvation.com/forums/the-game/commander-edh/variant-commander/490641-zombie-horde-200-card-list
 
-# Future ideas
-
-- More decks
-- When the horde gains life, put that many random cards from the graveyard on top of the library, and shuffle it.
-
 # Contributing
 
 - `git clone`
 - `npm install`
 - `npm start` will start up the app at http://localhost:3000/game
 - `npm run storybook` will start storybook at http://localhost:9009
+
+# Deploying
+
+Once you have write access to the repo, you should be able to run `npm run deploy` to deploy the current project to github pages.
