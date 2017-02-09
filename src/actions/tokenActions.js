@@ -52,7 +52,9 @@ export const spawnToken = () => {
         cardData: {
           imageUrl: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card',
           power: getState().getIn(['tokenSpawner', 'power']).toString(),
-          toughness: getState().getIn(['tokenSpawner', 'toughness']).toString()
+          toughness: getState().getIn(['tokenSpawner', 'toughness']).toString(),
+          layout: 'token',
+          types: ['Creature']
         }
       }])
     })
