@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
-class PlaneswalkerCounter extends Component {
-  render() {
-    return (
-      <div className="PlaneswalkerCounter">
-        <div className="NumPlaneswalkers">
-          {this.props.count}
-        </div>
-        <button className="PlaneswalkerButton" onClick={this.props.onRemove}>-</button>
-        <button className="PlaneswalkerButton"  onClick={this.props.onAdd}>+</button>
+const PlaneswalkerCounter = function({count, onRemove, onAdd}) {
+  return (
+    <div className="PlaneswalkerCounter">
+      <div className="NumPlaneswalkers">
+        {count}
       </div>
-    );
-  }
+      <button className="PlaneswalkerButton" onClick={onRemove}>-</button>
+      <button className="PlaneswalkerButton"  onClick={onAdd}>+</button>
+    </div>
+  );
 }
 
 export default PlaneswalkerCounter;

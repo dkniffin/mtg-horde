@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
-class Hand extends Component {
-  render() {
-    return (
-      <div className="Hand">
-        <div className="HandSize">
-          {this.props.cards.size}
-        </div>
-        <button className="HandButton" onClick={this.props.onDiscard}>-</button>
-        <button className="HandButton"  onClick={this.props.onDraw}>+</button>
+const Hand = function({cards, onDiscard, onDraw}) {
+  return (
+    <div className="Hand">
+      <div className="HandSize">
+        {cards.size}
       </div>
-    );
-  }
+      <button className="HandButton" onClick={onDiscard}>-</button>
+      <button className="HandButton"  onClick={onDraw}>+</button>
+    </div>
+  );
 }
 
 export default Hand;

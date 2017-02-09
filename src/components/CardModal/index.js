@@ -1,76 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
 import Modal from "react-modal"
 
-class CardModal extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.handleGraveyard = this.handleGraveyard.bind(this);
-    this.handleExile = this.handleExile.bind(this);
-    this.handleLibrary = this.handleLibrary.bind(this);
-    this.handleHand = this.handleHand.bind(this);
-    this.handleBattlefield = this.handleBattlefield.bind(this);
+const CardModal = function({
+    card, cardLocation, cardIndex, open,
+    onClose, onGraveyard, onExile, onLibrary, onHand, onBattlefield}) {
+  const handleGraveyard = function(event) {
+    onGraveyard(cardLocation, cardIndex)
+    onClose()
+  }
+  const handleExile = function(event) {
+    onExile(cardLocation, cardIndex)
+    onClose()
+  }
+  const handleLibrary = function(event) {
+    onLibrary(cardLocation, cardIndex)
+    onClose()
+  }
+  const handleHand = function(event) {
+    onHand(cardLocation, cardIndex)
+    onClose()
+  }
+  const handleBattlefield = function(event) {
+    onBattlefield(cardLocation, cardIndex)
+    onClose()
   }
 
-  handleGraveyard(event) {
-    this.props.onGraveyard(this.props.cardLocation, this.props.cardIndex)
-    this.props.onClose()
-  }
-  handleExile(event) {
-    this.props.onExile(this.props.cardLocation, this.props.cardIndex)
-    this.props.onClose()
-  }
-  handleLibrary(event) {
-    this.props.onLibrary(this.props.cardLocation, this.props.cardIndex)
-    this.props.onClose()
-  }
-  handleHand(event) {
-    this.props.onHand(this.props.cardLocation, this.props.cardIndex)
-    this.props.onClose()
-  }
-  handleBattlefield(event) {
-    this.props.onBattlefield(this.props.cardLocation, this.props.cardIndex)
-    this.props.onClose()
-  }
-
-  render() {
-    return (
-      <Modal
-        className="CardModal"
-        isOpen={this.props.open}
-        contentLabel="Card">
-        {this.props.card &&
-          <div
-            className="CardHolder">
-            <img
-              className="CardImg"
-              src={this.props.card.getIn(['cardData', 'imageUrl'])} role="presentation" />
-            <button className="CloseModalButton" onClick={this.props.onClose}>X</button>
-            <div className="controlButtons">
-              {this.props.cardLocation !== 'graveyard' &&
-                <button onClick={this.handleGraveyard}>Send to Graveyard</button>
-              }
-              {this.props.cardLocation !== 'exile' &&
-                <button onClick={this.handleExile}>Send to Exile</button>
-              }
-              {this.props.cardLocation !== 'deck' &&
-                <button onClick={this.handleLibrary}>Send to Library</button>
-              }
-              {this.props.cardLocation !== 'hand' &&
-                <button onClick={this.handleHand}>Send to Hand</button>
-              }
-              {this.props.cardLocation !== 'permanents' &&
-                <button onClick={this.handleBattlefield}>Send to Battlefield</button>
-              }
-            </div>
+  return (
+    <Modal
+      className="CardModal"
+      isOpen={open}
+      contentLabel="Card">
+      {card &&
+        <div
+          className="CardHolder">
+          <img
+            className="CardImg"
+            src={card.getIn(['cardData', 'imageUrl'])} role="presentation" />
+          <button className="CloseModalButton" onClick={onClose}>X</button>
+          <div className="controlButtons">
+            {cardLocation !== 'graveyard' &&
+              <button onClick={handleGraveyard}>Send to Graveyard</button>
+            }
+            {cardLocation !== 'exile' &&
+              <button onClick={handleExile}>Send to Exile</button>
+            }
+            {cardLocation !== 'deck' &&
+              <button onClick={handleLibrary}>Send to Library</button>
+            }
+            {cardLocation !== 'hand' &&
+              <button onClick={handleHand}>Send to Hand</button>
+            }
+            {cardLocation !== 'permanents' &&
+              <button onClick={handleBattlefield}>Send to Battlefield</button>
+            }
           </div>
-        }
-      </Modal>
-    );
-  }
+        </div>
+      }
+    </Modal>
+  );
 }
 
 export default CardModal;
