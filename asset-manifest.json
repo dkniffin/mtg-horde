@@ -1,7 +1,9 @@
 {
-  "main.css": "static/css/main.38e4ee17.css",
-  "main.css.map": "static/css/main.38e4ee17.css.map",
-  "main.js": "static/js/main.e4ac2606.js",
-  "main.js.map": "static/js/main.e4ac2606.js.map",
-  "static/media/zombie-background.jpg": "static/media/zombie-background.a4dbb854.jpg"
+  "main.css": "static/css/main.9ad5e414.css",
+  "main.css.map": "static/css/main.9ad5e414.css.map",
+  "main.js": "static/js/main.e65f1247.js",
+  "main.js.map": "static/js/main.e65f1247.js.map",
+  "static/media/card-back.png": "static/media/card-back.8f4d71e0.png",
+  "static/media/zombie-background.jpg": "static/media/zombie-background.a4dbb854.jpg",
+  "static/media/zombie-token.jpg": "static/media/zombie-token.8dd9d042.jpg"
 }
