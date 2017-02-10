@@ -21,6 +21,7 @@ const deckCards = rawdeck.map((cardData, i) => {
 const deck = shuffle(deckCards)
 
 export default Immutable.fromJS({
+  settings: {},
   nextIndex: deck.length,
   phase: 0,
   planeswalkers: 0,

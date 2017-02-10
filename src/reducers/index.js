@@ -13,6 +13,7 @@ import listModal from './listModalReducer'
 import drawCounter from './drawCounterReducer'
 import tokenSpawner from './tokenSpawnerReducer'
 import nextIndex from './indexReducer'
+import settings from './settingsReducer'
 
 export default combineReducers({
   deck,
@@ -27,5 +28,6 @@ export default combineReducers({
   listModal,
   drawCounter,
   tokenSpawner,
-  nextIndex
+  nextIndex,
+  settings
 })

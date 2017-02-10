@@ -17,5 +17,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    table {
+      margin-right: auto;
+      margin-left: auto;
+      .label {
+        text-align: right;
+      }
+      .input {
+        text-align: left;
+      }
+    }
   }
 }
