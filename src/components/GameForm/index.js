@@ -1,13 +1,16 @@
 import React from 'react';
 import './style.scss';
 
+import { hashHistory } from 'react-router';
+
 class GameForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       players: 4,
-      deck: 'zombie-200'
+      deck: 'zombie-200',
+      graveyardTokens: false
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -27,6 +30,7 @@ class GameForm extends React.Component {
   handleSubmit(event) {
     this.props.onSubmit(this.state);
     event.preventDefault();
+    hashHistory.push('/game');
   }
 
   render() {
@@ -52,6 +56,14 @@ class GameForm extends React.Component {
                     <select id="deck" name="deck" value={this.state.deck} onChange={this.handleInputChange} >
                       <option value="zombie-200">Zombies - 200</option>
                     </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="label">
+                    <label htmlFor="graveyardTokens">Destroyed tokens go to graveyard</label>
+                  </td>
+                  <td className="input">
+                    <input id="graveyardTokens" name="graveyardTokens" type="checkbox" value={this.state.graveyardTokens} onChange={this.handleInputChange} />
                   </td>
                 </tr>
               </tbody>
