@@ -1,7 +1,8 @@
 import shuffle from 'array-shuffle'
 import Immutable from 'immutable'
 
-const handReducer = (hand = [], action) => {
+// Cards in the Horde's hand
+const handReducer = (hand = Immutable.List(), action) => {
   switch (action.type) {
     case 'ADD_CARDS_TO_HAND':
       return hand.concat(action.cards)

@@ -1,6 +1,12 @@
 import Immutable from 'immutable'
 
-const drawCounterReducer = (drawCounter = [], action) => {
+const INITIAL_STATE = Immutable.fromJS({
+  counter: 0,
+  draw: 1
+})
+
+// https://github.com/dkniffin/mtg-horde/issues/7
+const drawCounterReducer = (drawCounter = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'NEXT_PHASE':
       if (action.phaseKey === 'SURVIVORS_TURN') {

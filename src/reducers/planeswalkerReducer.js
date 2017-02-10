@@ -1,4 +1,4 @@
-const planeswalkerReducer = (planeswalkers = [], action) => {
+const planeswalkerReducer = (planeswalkers = 0, action) => {
   switch (action.type) {
     case 'ADD_PLANESWALKER':
       return planeswalkers + 1

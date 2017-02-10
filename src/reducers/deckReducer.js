@@ -1,7 +1,8 @@
 import Immutable from 'immutable'
 import shuffle from 'array-shuffle'
 
-const deckReducer = (deck = [], action) => {
+// Cards currently in the library
+const deckReducer = (deck = null, action) => {
   switch (action.type) {
     case 'IMPORT_DECK':
       return Immutable.fromJS(action.deck)

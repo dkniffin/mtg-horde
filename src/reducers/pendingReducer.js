@@ -1,4 +1,7 @@
-const pendingReducer = (pending = [], action) => {
+import Immutable from 'immutable';
+
+// Cards that haven't hit the field yet
+const pendingReducer = (pending = Immutable.List(), action) => {
   switch (action.type) {
     case 'ADD_CARDS_TO_PENDING':
       return pending.concat(action.cards)

@@ -1,3 +1,5 @@
+import Immutable from 'immutable'
+
 function updateCardTappedTo(permanents, cardIndex, value) {
   return permanents.map((card) => {
     if (card.get('index') === cardIndex) {
@@ -12,8 +14,8 @@ function updateCardTappedTo(permanents, cardIndex, value) {
     }
   })
 }
-
-const permanentsReducer = (permanents = [], action) => {
+// Cards in the permanent zone
+const permanentsReducer = (permanents = Immutable.List(), action) => {
   switch (action.type) {
     case 'TOGGLE_TAPPED':
       return updateCardTappedTo(permanents, action.cardIndex, 'toggle')

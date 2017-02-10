@@ -1,6 +1,7 @@
 import Immutable from 'immutable'
 
-const graveyardReducer = (graveyard = [], action) => {
+// Cards in the graveyard
+const graveyardReducer = (graveyard = Immutable.List(), action) => {
   switch (action.type) {
     case 'ADD_CARDS_TO_GRAVEYARD':
       const immutized = Immutable.List(action.cards)

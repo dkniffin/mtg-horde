@@ -1,4 +1,4 @@
-const indexReducer = (index = [], action) => {
+const indexReducer = (index = 0, action) => {
   switch (action.type) {
     case 'IMPORT_DECK':
       return action.deck.length
