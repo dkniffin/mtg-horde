@@ -9,7 +9,7 @@ class GameForm extends React.Component {
 
     this.state = {
       players: 4,
-      deck: 'zombie-200',
+      deck: 'zombie200',
       graveyardTokens: false
     }
 
@@ -54,7 +54,7 @@ class GameForm extends React.Component {
                   </td>
                   <td className="input">
                     <select id="deck" name="deck" value={this.state.deck} onChange={this.handleInputChange} >
-                      <option value="zombie-200">Zombies - 200</option>
+                      <option value="zombie200">Zombies - 200</option>
                     </select>
                   </td>
                 </tr>

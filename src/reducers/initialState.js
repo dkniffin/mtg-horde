@@ -1,28 +1,8 @@
 import Immutable from 'immutable'
-import rawdeck from '../../decks/zombie.json'
-import shuffle from 'array-shuffle'
-
-const deckCards = rawdeck.map((cardData, i) => {
-  return {
-    cardData: cardData,
-    tapped: false,
-    index: i,
-    counters: {
-      power: 0,
-      toughness: 0
-    },
-    modifiers: {
-      power: 0,
-      toughness: 0
-    }
-  }
-})
-
-const deck = shuffle(deckCards)
 
 export default Immutable.fromJS({
   settings: {},
-  nextIndex: deck.length,
+  nextIndex: 0,
   phase: 0,
   planeswalkers: 0,
   cardModal: {
@@ -30,7 +10,7 @@ export default Immutable.fromJS({
     cardIndex: null,
     cardLocation: null
   },
-  deck: deck, // Cards currently in the library
+  deck: null, // Cards currently in the library
   pending: [], // Cards that haven't hit the field yet
   permanents: [], // Cards in the permanent zone
   hand: [], // Cards in the Horde's hand
