@@ -1,4 +1,5 @@
 import Immutable from 'immutable'
+import Card from '../records/card'
 
 export const buffTokenPower = () => {
   return (dispatch, getState) => {
@@ -35,28 +36,29 @@ export const debuffTokenToughness = () => {
 export const spawnToken = () => {
   return (dispatch, getState) => {
     const nextIndex = getState().get('nextIndex')
-    console.log()
+    const card = new Card(Immutable.fromJS({
+      tapped: false,
+      index: nextIndex,
+      counters: {
+        power: 0,
+        toughness: 0
+      },
+      modifiers: {
+        power: 0,
+        toughness: 0
+      },
+      cardData: {
+        imageUrl: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card',
+        power: getState().getIn(['tokenSpawner', 'power']).toString(),
+        toughness: getState().getIn(['tokenSpawner', 'toughness']).toString(),
+        layout: 'token',
+        types: ['Creature']
+      }
+    }))
+
     dispatch({
       type: 'ADD_CARDS_TO_BATTLEFIELD',
-      cards: Immutable.fromJS([{
-        tapped: false,
-        index: nextIndex,
-        counters: {
-          power: 0,
-          toughness: 0
-        },
-        modifiers: {
-          power: 0,
-          toughness: 0
-        },
-        cardData: {
-          imageUrl: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409656&type=card',
-          power: getState().getIn(['tokenSpawner', 'power']).toString(),
-          toughness: getState().getIn(['tokenSpawner', 'toughness']).toString(),
-          layout: 'token',
-          types: ['Creature']
-        }
-      }])
+      cards: [card]
     })
     dispatch({
       type: 'INC_INDEX'

@@ -38,7 +38,6 @@ export default {
       // functions that define the behavior of the card, and get called at the appropriate times
       const abilities = abilitiesFor(card)
       return abilities.includes('unearth') || abilities.includes('flashback')
-      // return /(flashback|unearth)/i.test(card.getIn(['cardData', 'text']))
     })
 
     dispatch ({

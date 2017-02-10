@@ -8,20 +8,14 @@ const CardZone = function({id, cards, onTap, onCardClick, location}) {
     <div id={id} className="CardZone">
       {
         cards.map((card) => {
-          const i = card.get('index')
-          const power = parseInt(card.getIn(['cardData', 'power']), 10) +
-                        card.getIn(['counters', 'power']) +
-                        card.getIn(['modifiers', 'power'])
-          const toughness = parseInt(card.getIn(['cardData', 'toughness']), 10) +
-                            card.getIn(['counters', 'toughness']) +
-                            card.getIn(['modifiers', 'toughness'])
+          const i = card.index
 
           return <Card key={"card-" + i}
                        imageUrl={card.getIn(['cardData', 'imageUrl'])}
                        tapped={card.get('tapped')}
                        onTap={onTap ? () => onTap(i) : false}
-                       power={power}
-                       toughness={toughness}
+                       power={card.calculatePower()}
+                       toughness={card.calculateToughness()}
                        onClick={() => onCardClick(location, card) }/>
         })
       }
