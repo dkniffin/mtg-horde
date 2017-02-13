@@ -1,5 +1,3 @@
-import { abilitiesFor } from './cardHelper.js'
-
 export default {
   resolvePending: function(dispatch, getState) {
     // Move pending to field
@@ -36,8 +34,7 @@ export default {
       // TODO: This is a little simplistic. There are other cards that allow you to cast things
       // from the graveyard, like Past in Flames. Really, we need a way to define arbitrary
       // functions that define the behavior of the card, and get called at the appropriate times
-      const abilities = abilitiesFor(card)
-      return abilities.includes('unearth') || abilities.includes('flashback')
+      return card.abilities().includes('unearth') || card.abilities().includes('flashback')
     })
 
     dispatch ({

@@ -4,8 +4,7 @@ function updateCardTappedTo(permanents, cardIndex, value) {
   return permanents.map((card) => {
     if (card.get('index') === cardIndex) {
       if (value === 'toggle') {
-        const tapped = card.get('tapped')
-        return card.set('tapped', !tapped)
+        return card.toggleTapped()
       } else {
         return card.set('tapped', value)
       }
