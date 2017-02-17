@@ -34,7 +34,7 @@ export default {
       // TODO: This is a little simplistic. There are other cards that allow you to cast things
       // from the graveyard, like Past in Flames. Really, we need a way to define arbitrary
       // functions that define the behavior of the card, and get called at the appropriate times
-      return card.abilities().includes('unearth') || card.abilities().includes('flashback')
+      return card.abilities().includes('Unearth') || card.abilities().includes('Flashback')
     })
 
     dispatch ({

@@ -1,5 +1,9 @@
 import { Record } from 'immutable'
 
+const ABILITIES = [
+  'Deathtouch', 'Defender', 'Double Strike', 'Enchant', 'Equip', 'First Strike', 'Flash', 'Flying', 'Haste', 'Hexproof', 'Indestructible', 'Lifelink', 'Menace', 'Prowess', 'Reach', 'Trample', 'Vigilance', 'Absorb', 'Affinity', 'Amplify', 'Annihilator', 'Aura Swap', 'Awaken', 'Banding', 'Battle Cry', 'Bestow', 'Bloodthirst', 'Bushido', 'Buyback', 'Cascade', 'Champion', 'Changeling', 'Cipher', 'Conspire', 'Convoke', 'Cumulative Upkeep', 'Cycling', 'Dash', 'Delve', 'Dethrone', 'Devoid', 'Devour', 'Dredge', 'Echo', 'Entwine', 'Epic', 'Evoke', 'Evolve', 'Exalted', 'Exploit', 'Extort', 'Fading', 'Fear', 'Flanking', 'Flashback', 'Forecast', 'Fortif', 'Frenzy', 'Fuse', 'Graft', 'Gravestorm', 'Haunt', 'Hidden Agenda', 'Hideaway', 'Horsemanship', 'Infect', 'Ingest', 'Intimidate', 'Kicker', 'Landhome', 'Landwalk', 'Level Up', 'Living Weapon', 'Madness', 'Megamorph', 'Miracle', 'Modular', 'Morph', 'Myriad', 'Ninjutsu', 'Offering', 'Outlast', 'Overload', 'Persist', 'Phasing', 'Poisonous', 'Protection', 'Provoke', 'Prowl', 'Rampage', 'Rebound', 'Recover', 'Reinforce', 'Renown', 'Replicate', 'Retrace', 'Ripple', 'Scavenge', 'Shadow', 'Shroud', 'Soulbond', 'Soulshift', 'Splice', 'Split Second', 'Storm', 'Substance', 'Sunburst', 'Surge', 'Suspend', 'Totem Armor', 'Transfigure', 'Transmute', 'Tribute', 'Undying', 'Unearth', 'Unleash', 'Vanishing', 'Wither'
+]
+
 class Card extends Record({ cardData: {}, tapped: false, index: 0, counters: {}, modifiers: {} }) {
   calculatePower() {
     return parseInt(this.cardData.get('power'), 10) +
@@ -15,26 +19,24 @@ class Card extends Record({ cardData: {}, tapped: false, index: 0, counters: {},
     return this.set('tapped', !this.tapped)
   }
 
-  /* TODO: Refactor this to do this:
-    Get list of known abilities (manually compiled list from the rulebook)
-    Look a line that starts with any of the provided abilities with either a \n or , following after them.
-    Take those lines and split it by ,
-    With the resulting arrays, loop over each and do whatever formatting voodoo is needed to make sensible objects.
-    Combine the resulting array of keywords into one big keyword object list.
-
-    Source: https://github.com/mtgjson/mtgjson/issues/285#issuecomment-276043626
-  */
-
+  // Parse out card text, and return a list of static abilities
   abilities() {
-    switch(this.getIn(['cardData', 'name'])) {
-      case 'Rotting Rats':
-        return ['unearth']
-      case 'Army of the Damned':
-      case 'Past in Flames':
-        return ['flashback']
-      default:
-        return []
+    function cleanupAbility(text) {
+      return text.replace(/\(.*\)/, '') // Remove reminder text
+                 .replace(/\{.*\}/, '') // Remove the cost
+                 .trim() // Remove whitespace from start and end
     }
+    const text = this.cardData.get('text');
+    const lines = text.split("\n")
+    const keywordLines = lines.filter((line) => {
+      const firstPossibleAbility = cleanupAbility(line.split(/,/)[0])
+      return ABILITIES.includes(firstPossibleAbility)
+    })
+    const abilities = keywordLines
+            .map((line) => line.split(/,/))
+            .reduce( ( acc, cur ) => acc.concat(cur), [])
+            .map((rawAbilityText) => cleanupAbility(rawAbilityText));
+    return abilities
   }
 }
 
