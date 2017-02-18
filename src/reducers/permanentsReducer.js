@@ -30,7 +30,12 @@ const permanentsReducer = (permanents = Immutable.List(), action) => {
       return permanents.concat(action.cards)
     case 'REMOVE_CARD':
       if (action.cardLocation === 'permanents') {
-        return permanents.delete(action.i)
+        // TODO: Refactor this so all use index
+        if (action.i) {
+          return permanents.delete(action.i)
+        } else {
+          return permanents.filterNot((card) => card.get('index') === action.index)
+        }
       } else {
         return permanents
       }

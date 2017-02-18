@@ -11,6 +11,7 @@ import PhaseTracker from '../../components/PhaseTracker'
 import ListModal from '../../components/ListModal'
 import CardModal from '../../components/CardModal'
 import TokenCreator from '../../components/TokenCreator'
+import BoardWipe from '../../components/BoardWipe'
 // import PlaneswalkerCounter from '../../components/PlaneswalkerCounter'
 
 import * as actions from '../../actions'
@@ -35,6 +36,19 @@ class GamePage extends Component {
           cards={this.props.hand}
           onDiscard={this.props.handDiscard}
           onDraw={this.props.drawCards}/>
+        <TokenCreator
+          onSpawn={this.props.spawnToken}
+          onDebuffPower={this.props.debuffTokenPower}
+          onBuffPower={this.props.buffTokenPower}
+          onDebuffToughness={this.props.debuffTokenToughness}
+          onBuffToughness={this.props.buffTokenToughness}
+          tokenPower={this.props.tokenPower}
+          tokenToughness={this.props.tokenToughness} />
+        <BoardWipe
+          all={this.props.boardWipeAll}
+          nonLandPermanents={this.props.boardWipenonLandPermanents}
+          creatures={this.props.boardWipeCreatures}
+          tokens={this.props.boardWipeTokens} />
         <CardZone
           id="PendingZone"
           location='pending'
@@ -57,14 +71,6 @@ class GamePage extends Component {
           onLibrary={this.props.sendToLibrary}
           onHand={this.props.sendToHand}
           onBattlefield={this.props.sendToBattlefield} />
-        <TokenCreator
-          onSpawn={this.props.spawnToken}
-          onDebuffPower={this.props.debuffTokenPower}
-          onBuffPower={this.props.buffTokenPower}
-          onDebuffToughness={this.props.debuffTokenToughness}
-          onBuffToughness={this.props.buffTokenToughness}
-          tokenPower={this.props.tokenPower}
-          tokenToughness={this.props.tokenToughness} />
         <ListModal
           cards={this.props.listModal}
           location='graveyard'

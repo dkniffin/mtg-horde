@@ -38,6 +38,13 @@ class Card extends Record({ cardData: {}, tapped: false, index: 0, counters: {},
             .map((rawAbilityText) => cleanupAbility(rawAbilityText));
     return abilities
   }
+
+  isPermanent() {
+    const types = this.cardData.get('types')
+    return types.includes('Creature') ||
+           types.includes('Artifact') ||
+           types.includes('Enchantment')
+  }
 }
 
 export default Card
